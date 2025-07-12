@@ -80,8 +80,11 @@ After each guess, the game uses emojis to show how close you are:
 ---
 
 ## Running the Game
+
+Install one of the `releases` or download the source code and do the following:
+
 1. Make sure you have Python 3 installed.
-2. Run the game from the `src` directory:
+2. Run the game:
    ```
    python main.py
    ```
