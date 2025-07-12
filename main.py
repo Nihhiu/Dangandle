@@ -1,7 +1,7 @@
 # Imports
-from import_csv import load_characters
-from mechanics import compare_character, find_similar_name
-from terminal_presentation import clear_screen, print_history
+from src.import_csv import load_characters
+from src.mechanics import compare_character, find_similar_name
+from src.terminal_presentation import clear_screen, print_history
 import random
 
 def play_game(characters):
@@ -52,5 +52,6 @@ def play_game(characters):
 
 
 if __name__ == "__main__":
-    characters = load_characters("../resources/characters.csv")
+    characters = load_characters("resources/characters.csv")
     play_game(characters)
+    input("Press any key to exit...")
