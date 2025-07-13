@@ -49,19 +49,19 @@ In the `Likes` and `Dislikes` columns, emojis are used to represent categories o
 | Emoji | Meaning                      |
 |-------|------------------------------|
 | 🍽️    | Meal                         |
-| 🍩    | Candy                        |
-| 🍴    | Objects                      |
-| 💻    | Technology                   |
+| 🍩    | Snack                        |
+| 📚    | Objects                      |
+| 💻    | Intelectual, Tech            |
 | 🎧    | Sound                        |
 | 🏳️    | Country                      |
 | 🐕    | Animal                       |
 | 🌿    | Plants                       |
-| 🛏️    | Furniture                    |
+| 🛏️    | Furniture, Rooms             |
 | 👕    | Clothes                      |
 | 🍹    | Alcohol, Tobacco, Drugs      |
 | ⛅    | Weather                      |
 | 🎬    | Entertainment                |
-| 🏃    | Sports                       |
+| 🏃    | Physical Activity            |
 | 👧    | Girl                         |
 | 👦    | Boy                          |
 | 📱    | Social                       |
