@@ -17,22 +17,26 @@ def compare_character(guess, target):
             result[key] = compare_multi_field(guess_val, target_val)
 
         elif key in NUMERIC_FIELDS:
-            # Verify if the values are equal
-            if guess_val == target_val or int(guess_val) == int(target_val):
-                result[key] = f"{guess_val} ✅"
-            
-            # Verify if the values are numeric
-            elif guess_val.isdigit() and target_val.isdigit():
-                if int(guess_val) > int(target_val):
+            # Non Numeric values are handled separately
+            if not target_val.isdigit():
+                if target_val == guess_val:
+                    result[key] = f"{guess_val} ✅"
+                else:
                     result[key] = f"{guess_val} ⬇️"
-                elif int(guess_val) < int(target_val):
+            
+            elif not guess_val.isdigit():
+                if target_val == guess_val:
+                    result[key] = f"{guess_val} ✅"
+                else:
                     result[key] = f"{guess_val} ⬆️"
             
-            # Handle cases where one or both values are not numeric
-            elif not target_val.isdigit():
-                result[key] = f"{guess_val} ⬇️"
-            elif not guess_val.isdigit():
+            # Handle cases where both are numeric
+            elif guess_val == target_val or int(guess_val) == int(target_val):
+                result[key] = f"{guess_val} ✅"
+            elif guess_val < target_val:
                 result[key] = f"{guess_val} ⬆️"
+            elif guess_val > target_val:
+                result[key] = f"{guess_val} ⬇️"
         else:
             if guess_val == target_val:
                 result[key] = f"{guess_val} ✅"
