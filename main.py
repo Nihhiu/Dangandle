@@ -3,6 +3,7 @@ from src.import_csv import load_characters
 from src.mechanics import compare_character, find_similar_name
 from src.terminal_presentation import clear_screen, print_history
 import random
+import daytime
 
 def filter_characters_by_appearance(characters):
     appearances = sorted(set(char.get("First Appearance", "") for char in characters))
@@ -49,7 +50,15 @@ def play_game(characters):
     filtered_characters = filter_characters_by_appearance(characters)
     if not filtered_characters:
         return
-    target = random.choice(filtered_characters)
+    
+    today = daytime.today()
+    day_of_year = today.timetuple().tm_yday
+
+    seeded_random = random.Random()
+    seeded_random.seed(day_of_year)
+
+    target = seeded_random.choice(filtered_characters)
+
     fields = [key for key in target.keys() if key not in ("Name", "Aliases")]
 
     history = []
