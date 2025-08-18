@@ -49,7 +49,7 @@ def play_game(characters, target):
 
 
 if __name__ == "__main__":
-    characters = load_characters("resources/characters.csv")
+    characters = load_characters("../resources/characters.csv")
     GAME_MODE = choose_game_mode()
 
     if GAME_MODE != "daily":

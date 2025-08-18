@@ -79,9 +79,7 @@ After each guess, the game uses emojis to show how close you are:
 
 ---
 
-## Running the Game
-
-Install one of the `releases` or download the source code and do the following:
+### Running from Source
 
 1. Make sure you have Python 3 installed.
 2. Run the game:
@@ -89,3 +87,33 @@ Install one of the `releases` or download the source code and do the following:
    python main.py
    ```
 3. Follow the on-screen instructions to play!
+
+---
+
+### Creating an Executable (Step-by-Step)
+
+1. Open your terminal and run:
+   ```
+   pip install pyinstaller
+   ```
+
+2. In `main.py`, change the line:
+   ```python
+   characters = load_characters("../resources/characters.csv")
+   ```
+   to:
+   ```python
+   characters = load_characters("resources/characters.csv")
+   ```
+
+3. Run the following command in your terminal:
+   ```
+   python dist_creation.py
+   ```
+   This will use PyInstaller to build the executable.
+
+4. After the process completes, look for your game executable in the `dist` folder.
+
+5. Double-click the executable or run it from the terminal to play!
+
+---
