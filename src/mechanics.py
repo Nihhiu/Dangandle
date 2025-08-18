@@ -44,21 +44,38 @@ def compare_character(guess, target):
                 result[key] = f"{guess_val} ❌"
     return result
 
-def find_similar_name(name_input, characters, used_names, threshold=0.5):
+from difflib import SequenceMatcher
+
+def find_similar_name(name_input, characters, used_names, threshold=0.6):
     best_match = None
     best_score = 0
+
+    # Normalize
+    name_input = name_input.lower().strip()
+    input_tokens = name_input.split()
 
     for char in characters:
         if char["Name"] in used_names:
             continue
 
-        # Lista de nomes possíveis
+        # Possible names
         all_names = [char["Name"]]
         if "Aliases" in char:
             all_names += [alias.strip() for alias in char["Aliases"].split(",")]
 
         for alt_name in all_names:
-            score = SequenceMatcher(None, name_input.lower(), alt_name.lower()).ratio()
+            alt_name_norm = alt_name.lower().strip()
+
+            # Check if all tokens appear in the name
+            token_hits = sum(1 for tok in input_tokens if tok in alt_name_norm)
+
+            if token_hits == len(input_tokens):
+                # If all tokens appear, give maximum priority
+                score = 2.0 + token_hits
+            else:
+                # Otherwise, use normal similarity
+                score = SequenceMatcher(None, name_input, alt_name_norm).ratio() + token_hits * 0.3
+
             if score > best_score and score >= threshold:
                 best_score = score
                 best_match = char

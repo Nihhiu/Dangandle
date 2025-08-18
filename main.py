@@ -26,7 +26,6 @@ def play_game(characters, target):
         if not guess:
             clear_screen()
             print("Character not found. Try again.\n")
-            print_history(history, ["Name"] + fields, GAME_MODE)
             continue
 
         if guess["Name"] == target["Name"]:
@@ -39,7 +38,7 @@ def play_game(characters, target):
             print("\n🎉 Correct! You guessed the character!\n")
             break
 
-        # Comparação
+        # Comparison
         comparison = compare_character(guess, target)
         entry = {"Name": guess["Name"]}
         entry.update(comparison)
@@ -50,7 +49,7 @@ def play_game(characters, target):
 
 
 if __name__ == "__main__":
-    characters = load_characters("../resources/characters.csv")
+    characters = load_characters("resources/characters.csv")
     GAME_MODE = choose_game_mode()
 
     if GAME_MODE != "daily":
