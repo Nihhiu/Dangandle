@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dangandle — Daily Danganronpa Wordle</title>
+<meta name="description" content="A daily deduction puzzle: guess the hidden Danganronpa character from attribute clues. Green, yellow and red tells narrow down the candidates.">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="Dangandle — Daily Danganronpa Wordle">
+<meta property="og:description" content="Guess the hidden Danganronpa character. 10 attempts, one new puzzle every day.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="backdrop" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="brand">
+    <img class="brand-mark" src="favicon.svg" alt="" width="34" height="34">
+    <div>
+      <h1>DANGANDLE</h1>
+      <p class="tagline">A daily Danganronpa deduction puzzle</p>
+    </div>
+  </div>
+
+  <nav class="modes" aria-label="Game mode">
+    <button type="button" class="mode-btn is-active" data-mode="daily">Daily</button>
+    <button type="button" class="mode-btn" data-mode="random">Random</button>
+  </nav>
+
+  <div class="topbar-actions">
+    <button type="button" class="ghost-btn" id="stats-btn">Stats</button>
+    <button type="button" class="ghost-btn" id="help-btn">How to play</button>
+  </div>
+</header>
+
+<main class="layout">
+  <section class="board" aria-label="Game board">
+    <div class="puzzle-info">
+      <div>
+        <span class="puzzle-label">Puzzle</span>
+        <span class="puzzle-value" id="puzzle-number">#000</span>
+      </div>
+      <div>
+        <span class="puzzle-label">Date</span>
+        <span class="puzzle-value" id="puzzle-date">—</span>
+      </div>
+      <div>
+        <span class="puzzle-label">Attempts</span>
+        <span class="puzzle-value" id="attempts-left">10 / 10</span>
+      </div>
+    </div>
+
+    <div class="slots" id="slots" aria-label="Attempt slots"></div>
+
+    <div class="guesses" id="guesses" aria-live="polite"></div>
+
+    <form class="guess-form" id="guess-form" autocomplete="off">
+      <div class="input-wrap">
+        <input type="text" id="guess-input" placeholder="Type a character name…" aria-label="Character name" spellcheck="false">
+        <ul class="suggestions" id="suggestions" role="listbox" aria-label="Suggestions"></ul>
+      </div>
+      <button type="submit" class="primary-btn">Guess</button>
+    </form>
+
+    <div class="underbar">
+      <span class="candidates" id="candidates">— candidates left</span>
+      <div class="underbar-actions">
+        <button type="button" class="ghost-btn small" id="giveup-btn">Give up</button>
+      </div>
+    </div>
+  </section>
+
+  <aside class="sidebar">
+    <div class="panel">
+      <h2>Clues</h2>
+      <p class="panel-text">Every guess is compared with the secret character attribute by attribute.</p>
+      <ul class="legend">
+        <li><span class="swatch exact"></span><strong>Exact</strong> — the attribute matches the secret.</li>
+        <li><span class="swatch close"></span><strong>Partial</strong> — close, but not identical (same series, same role word, near value…).</li>
+        <li><span class="swatch none"></span><strong>None</strong> — the attribute has nothing in common.</li>
+        <li><span class="swatch unknown"></span><strong>Unknown</strong> — the secret has no data for that attribute.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h2>Attributes</h2>
+      <ul class="attr-list" id="attr-list"></ul>
+    </div>
+
+    <div class="panel">
+      <h2>Emoji key</h2>
+      <ul class="emoji-key" id="emoji-key"></ul>
+    </div>
+  </aside>
+</main>
+
+<!-- Result modal -->
+<div class="modal" id="result-modal" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="result-title">
+    <button type="button" class="modal-close" id="result-close" aria-label="Close">×</button>
+    <div class="result-head">
+      <img class="result-portrait" id="result-portrait" alt="" width="120" height="120">
+      <div>
+        <p class="result-kicker" id="result-kicker">Case closed</p>
+        <h2 id="result-title">—</h2>
+        <p class="result-sub" id="result-sub">—</p>
+      </div>
+    </div>
+    <table class="result-table" id="result-table"></table>
+    <div class="modal-actions">
+      <button type="button" class="primary-btn" id="share-btn">Copy result</button>
+      <button type="button" class="ghost-btn" id="new-game-btn">New random game</button>
+    </div>
+    <p class="share-hint" id="share-hint" role="status"></p>
+  </div>
+</div>
+
+<!-- Stats modal -->
+<div class="modal" id="stats-modal" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="stats-title">
+    <button type="button" class="modal-close" id="stats-close" aria-label="Close">×</button>
+    <h2 id="stats-title">Statistics</h2>
+    <div class="stats-grid" id="stats-grid"></div>
+    <h3>Guess distribution</h3>
+    <div class="distribution" id="distribution"></div>
+    <button type="button" class="ghost-btn small" id="stats-reset">Reset stats</button>
+  </div>
+</div>
+
+<!-- Help modal -->
+<div class="modal" id="help-modal" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="help-title">
+    <button type="button" class="modal-close" id="help-close" aria-label="Close">×</button>
+    <h2 id="help-title">How to play</h2>
+    <ol class="help-list">
+      <li>One character is hidden. <strong>You have 10 attempts</strong> to name them.</li>
+      <li>Type a name and pick a suggestion (aliases like <em>Keebo</em> or <em>Celeste</em> work too).</li>
+      <li>Each guess is compared with the secret on nine attributes: title, gender, height, weight, status, talent, likes, dislikes and debut game.</li>
+      <li><span class="swatch exact"></span> means the attribute matches exactly, <span class="swatch close"></span> means it is partially right, <span class="swatch none"></span> means it is wrong.</li>
+      <li>Numbers also point up or down: your height was too low or too high.</li>
+      <li>The counter shows how many characters are still consistent with every clue you have seen.</li>
+      <li>A new puzzle is generated every day from the date as a seed — everybody plays the same character on the same day.</li>
+    </ol>
+    <p class="help-note">Progress and statistics are stored in this browser only.</p>
+  </div>
+</div>
+
+<script src="js/characters.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

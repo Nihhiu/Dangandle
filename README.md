@@ -1,10 +1,81 @@
 # Dangandle
 
-Dangandle is a terminal-based guessing game inspired by Onepiecedle, but with Danganronpa characters. Your goal is to guess the secret character by entering their name. After each guess, the game will show you which details you got right, which are wrong, and how close you are for certain fields.
+Dangandle is a guessing game inspired by Onepiecedle and Wordle, but with Danganronpa characters. Your goal is to guess the secret character by entering their name. After each guess, the game will show you which details you got right, which are wrong, and how close you are for certain fields.
+
+There are **two versions** in this repository:
+
+| Version | Where | What it is |
+| --- | --- | --- |
+| 🌐 **Web game** | [`web/`](web/) | The daily puzzle, playable in the browser and deployable to GitHub Pages |
+| 💻 **Terminal game** | [`main.py`](main.py) | The original command-line version |
+
+---
+
+## 🌐 Play it online (GitHub Pages)
+
+The web game lives in the [`web/`](web/) folder and has no build step — it is plain
+HTML, CSS and JavaScript, so GitHub Pages can serve it as-is.
+
+### 1. Publish the site
+
+1. Make sure everything is pushed to GitHub:
+
+   ```bash
+   git add .
+   git commit -m "Add Dangandle web game"
+   git push origin main
+   ```
+
+2. On GitHub, open the repository → **Settings → Pages**.
+3. In *Build and deployment* choose **Deploy from a branch**.
+4. Pick the branch **`main`** and the folder **`/web`**, then press **Save**.
+5. Wait for the green check mark. The game is now live at:
+
+   ```
+   https://<your-user>.github.io/<your-repo>/
+   ```
+
+   For this repository that is **https://nihhiu.github.io/Dangandle/**
+
+> `web/.nojekyll` is committed on purpose, so GitHub publishes the folder exactly as
+> it is on disk.
+
+### 2. Test it locally before publishing
+
+```bash
+python scripts/serve_web.py        # http://127.0.0.1:8765/
+```
+
+### How the daily puzzle works
+
+* The date (`YYYY-MM-DD`) is hashed into a seed, so **everybody plays the same
+  character on the same day** — a new puzzle is generated every midnight.
+* You have **10 attempts**. Each guess is compared with the secret on nine
+  attributes: title, gender, height, weight, status, talent, likes, dislikes and
+  debut game.
+  * 🟩 **green** — exact match
+  * 🟨 **yellow** — partial match (same role word, same game series, a number close
+    to the secret…)
+  * 🟥 **red** — nothing in common
+  * ⬜ **grey** — the secret has no data for that attribute
+  * ↑ ↓ — the secret is taller/shorter or heavier/lighter than your guess
+* A live **candidate counter** shows how many characters are still consistent with
+  every clue you have seen.
+* `?d=2026-01-31` opens an archived puzzle; `?m=random` starts a random game.
+* Progress and statistics are stored in the browser (`localStorage`).
+
+Full details: [`web/README.md`](web/README.md).
 
 ---
 
 ## Index
+
+### Web game
+
+- [Play it online (GitHub Pages)](#-play-it-online-github-pages)
+- [How the daily puzzle works](#how-the-daily-puzzle-works)
+
+### Terminal game
 
 - [How to Play](#how-to-play)
 - [Data Columns Explained](#data-columns-explained)
@@ -115,5 +186,25 @@ After each guess, the game uses emojis to show how close you are:
 4. After the process completes, look for your game executable in the `dist` folder.
 
 5. Double-click the executable or run it from the terminal to play!
+
+---
+
+## Development
+
+```bash
+# rebuild the web dataset (web/js/characters.js + web/images/<id>.webp)
+python scripts/build_web_data.py
+
+# serve the web game locally with no-cache headers
+python scripts/serve_web.py
+```
+
+| Path | Purpose |
+| --- | --- |
+| `resources/characters.csv` | source of truth for every character attribute |
+| `resources/image-mapping.csv` | which portrait file became which id |
+| `scripts/build_web_data.py` | regenerates the dataset and renames the portraits |
+| `scripts/serve_web.py` | tiny local static server for the web game |
+| `web/` | the browser game (this is what GitHub Pages publishes) |
 
 ---
