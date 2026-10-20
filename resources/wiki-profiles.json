@@ -1,0 +1,1127 @@
+{
+  "Monokuma": {
+    "likes": null,
+    "dislikes": null,
+    "height": "75 cm (JP) 65 cm (JP) 2'1\" (ENG) 2'5\" (ENG)",
+    "weight": null,
+    "gender": "Male",
+    "status": "Inactive",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Makoto Naegi": {
+    "likes": [
+      "Curry",
+      "Trendy things"
+    ],
+    "dislikes": [
+      "Dried mackerel",
+      "Dried bean curd"
+    ],
+    "height": "160 cm (JP) 161 cm (JP; DR3) 5'3\" (ENG)",
+    "weight": "115 lbs (52 kg)",
+    "gender": "Male",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Aoi Asahina": {
+    "likes": [
+      "Donuts"
+    ],
+    "dislikes": [
+      "Calculating"
+    ],
+    "height": "160 cm 5'3\" (ENG)",
+    "weight": "110 lbs (50 kg)",
+    "gender": "Female",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Byakuya Togami": {
+    "likes": [
+      "Coffee",
+      "French"
+    ],
+    "dislikes": [
+      "Plebeians/Commoners",
+      "Microwave meals"
+    ],
+    "height": "185 cm (JP) 6'1\" (ENG)",
+    "weight": "150 lbs (68 kg)",
+    "gender": "Male",
+    "status": "Alive",
+    "talent": null,
+    "debut": null
+  },
+  "Celestia Ludenberg": {
+    "likes": null,
+    "dislikes": null,
+    "height": "164 cm 5'5\" (ENG)",
+    "weight": "101 lbs (46 kg)",
+    "gender": "Female",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Chihiro Fujisaki": {
+    "likes": null,
+    "dislikes": null,
+    "height": "148 cm 4'10\" (ENG)",
+    "weight": "90 lbs (41 kg)",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Hifumi Yamada": {
+    "likes": null,
+    "dislikes": null,
+    "height": "170 cm 5'7\" (ENG)",
+    "weight": "342 lbs (155 kg)",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Junko Enoshima": {
+    "likes": [
+      "None"
+    ],
+    "dislikes": [
+      "None"
+    ],
+    "height": "169 cm (JP) 5'7\" (ENG)",
+    "weight": "45 kg",
+    "gender": "Female",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Kiyotaka Ishimaru": {
+    "likes": null,
+    "dislikes": null,
+    "height": "176 cm 5'9\" (ENG)",
+    "weight": "146 lbs (66 kg)",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Kyoko Kirigiri": {
+    "likes": [
+      "Hair braids"
+    ],
+    "dislikes": [
+      "Goya",
+      "Coriander"
+    ],
+    "height": "167 cm (JP) 5'6\" (ENG)",
+    "weight": "106 lbs (48 kg)",
+    "gender": "Female",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Leon Kuwata": {
+    "likes": null,
+    "dislikes": null,
+    "height": "175 cm 5'9\" (ENG)",
+    "weight": "148 lbs (67 kg)",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Mondo Owada": {
+    "likes": null,
+    "dislikes": null,
+    "height": "187 cm 6'2\" (ENG)",
+    "weight": "168 lbs (76 kg)",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Mukuro Ikusaba": {
+    "likes": [
+      "Her sister",
+      "Army knives"
+    ],
+    "dislikes": [
+      "Make-up"
+    ],
+    "height": "169 cm 5'7\" (ENG)",
+    "weight": "97 lbs (44 kg)",
+    "gender": "Female",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Sakura Ogami": {
+    "likes": null,
+    "dislikes": null,
+    "height": "192 cm 6'4\" (ENG)",
+    "weight": "218 lbs (99 kg)",
+    "gender": "Female",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Sayaka Maizono": {
+    "likes": null,
+    "dislikes": null,
+    "height": "165 cm 5'5\" (ENG)",
+    "weight": "108 lbs (49 kg)",
+    "gender": "Female",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Toko Fukawa": {
+    "likes": [
+      "Byakuya Togami",
+      "Romance novels"
+    ],
+    "dislikes": [
+      "Light novels",
+      "Manga"
+    ],
+    "height": "164 cm 5'4\" (ENG; DR1) 5'3\" (ENG; DRAE)",
+    "weight": "104 lbs (47 kg)",
+    "gender": "Female",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Genocide Jack": {
+    "likes": [
+      "Byakuya Togami",
+      "Adorable boys"
+    ],
+    "dislikes": [
+      "Unadorable boys",
+      "Unadorable girls"
+    ],
+    "height": "164 cm 5'4\" (ENG; DR1) 5'3\" (ENG; DRAE)",
+    "weight": "104 lbs (47 kg)",
+    "gender": "Female",
+    "status": "Alive",
+    "talent": "Ultimate Murderous Fiend",
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Yasuhiro Hagakure": {
+    "likes": [
+      "Money"
+    ],
+    "dislikes": [
+      "Hidden cameras"
+    ],
+    "height": "180 cm 6'0\" (ENG)",
+    "weight": "157 lbs (71 kg)",
+    "gender": "Male",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Usami": {
+    "likes": null,
+    "dislikes": null,
+    "height": null,
+    "weight": null,
+    "gender": null,
+    "status": null,
+    "talent": null,
+    "debut": null
+  },
+  "Jin Kirigiri": {
+    "likes": [
+      "Suits",
+      "His daughter"
+    ],
+    "dislikes": [
+      "Tobacco"
+    ],
+    "height": "178 cm",
+    "weight": "66 kg (146 lbs)",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Hajime Hinata": {
+    "likes": [
+      "Hajime: Kusamochi",
+      "Izuru: None"
+    ],
+    "dislikes": [
+      "Hajime: Sakuramochi",
+      "Izuru: None"
+    ],
+    "height": "179 cm (JP) 5'8\" (ENG)",
+    "weight": "67 kg (JP) 147 lbs (ENG)",
+    "gender": "Male",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa 2: Goodbye Despair"
+  },
+  "Akane Owari": {
+    "likes": [
+      "Fighting",
+      "Meat"
+    ],
+    "dislikes": [
+      "Working hard"
+    ],
+    "height": "176 cm (JP) 5'7\" (ENG)",
+    "weight": "56 kg (JP) 123 lbs (ENG)",
+    "gender": "Female",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa 2: Goodbye Despair"
+  },
+  "Ultimate Imposter": {
+    "likes": [
+      "Unknown"
+    ],
+    "dislikes": [
+      "Unknown"
+    ],
+    "height": "Unknown",
+    "weight": "Unknown",
+    "gender": "Unknown (Presents as male in shown disguises)",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa 2: Goodbye Despair"
+  },
+  "Chiaki Nanami (Danganronpa 2)": {
+    "likes": [
+      "Games (even crappy games)"
+    ],
+    "dislikes": [
+      "Alarm clocks"
+    ],
+    "height": "160 cm (JP) 5'2\" (ENG)",
+    "weight": "46 kg (JP) 101 lbs (ENG)",
+    "gender": "Female",
+    "status": "Inactive",
+    "talent": "Ultimate Gamer",
+    "debut": "Danganronpa 2: Goodbye Despair"
+  },
+  "Fuyuhiko Kuzuryu": {
+    "likes": [
+      "Karintō (JP)",
+      "Fried dough cookies (EN)"
+    ],
+    "dislikes": [
+      "Milk"
+    ],
+    "height": "157 cm (JP) 5'1\" (ENG)",
+    "weight": "43 kg (JP) 94 lbs (ENG)",
+    "gender": "Male",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa 2: Goodbye Despair"
+  },
+  "Gundham Tanaka": {
+    "likes": [
+      "Four Dark Devas of Destruction"
+    ],
+    "dislikes": [
+      "Earthly life"
+    ],
+    "height": "182 cm (JP) 5'9\" (ENG)",
+    "weight": "74 kg (JP) 163 lbs (ENG)",
+    "gender": "Male",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa 2: Goodbye Despair"
+  },
+  "Hiyoko Saionji": {
+    "likes": [
+      "Squish squishy"
+    ],
+    "dislikes": [
+      "Lectures",
+      "Sour stuff"
+    ],
+    "height": "130 cm (JP; DR2) 4'2\" (ENG; DR2) 168 cm (JP; DR3)",
+    "weight": "31 kg (JP; DR2) 68 lbs (ENG; DR2) 47 kg (DR3)",
+    "gender": "Female",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa 2: Goodbye Despair"
+  },
+  "Ibuki Mioda": {
+    "likes": [
+      "Walking",
+      "Napping",
+      "Gaming"
+    ],
+    "dislikes": [
+      "Boredom"
+    ],
+    "height": "164 cm (JP) 5'3\" (ENG)",
+    "weight": "42 kg (JP) 92 lbs (ENG)",
+    "gender": "Female",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa 2: Goodbye Despair"
+  },
+  "Kazuichi Soda": {
+    "likes": [
+      "Coke"
+    ],
+    "dislikes": [
+      "Sugar-free anything"
+    ],
+    "height": "172 cm (JP) 5'6\" (ENG)",
+    "weight": "64 kg (JP) 141 lbs (ENG)",
+    "gender": "Male",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa 2: Goodbye Despair"
+  },
+  "Mahiru Koizumi": {
+    "likes": [
+      "Traveling alone"
+    ],
+    "dislikes": [
+      "Bad manners"
+    ],
+    "height": "165 cm (JP) 5'4\" (ENG)",
+    "weight": "46 kg (JP) 101 lbs (ENG)",
+    "gender": "Female",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa 2: Goodbye Despair"
+  },
+  "Mikan Tsumiki": {
+    "likes": [
+      "Bathroom smells",
+      "Alcohol"
+    ],
+    "dislikes": [
+      "Oversized things"
+    ],
+    "height": "165 cm (JP) 5'4\" (ENG)",
+    "weight": "57 kg (JP) 125 lbs (ENG)",
+    "gender": "Female",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa 2: Goodbye Despair"
+  },
+  "Nagito Komaeda": {
+    "likes": [
+      "Pretty/beautiful things",
+      "Beautiful people"
+    ],
+    "dislikes": [
+      "Noisy places",
+      "Ugly people"
+    ],
+    "height": "180 cm (JP) 5'9\" (ENG)",
+    "weight": "65 kg (JP) 143 lbs (ENG)",
+    "gender": "Male",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa 2: Goodbye Despair"
+  },
+  "Nekomaru Nidai": {
+    "likes": [
+      "Freshly washed towels"
+    ],
+    "dislikes": [
+      "Lazy people"
+    ],
+    "height": "198 cm (JP) 6'4\" (ENG)",
+    "weight": "122 kg (JP) 268 lbs (ENG)",
+    "gender": "Male",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa 2: Goodbye Despair"
+  },
+  "Peko Pekoyama": {
+    "likes": [
+      "Black"
+    ],
+    "dislikes": [
+      "Candy"
+    ],
+    "height": "172 cm (JP) 5'6\" (ENG)",
+    "weight": "51 kg (JP) 112 lbs (ENG)",
+    "gender": "Female",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa 2: Goodbye Despair"
+  },
+  "Sonia Nevermind": {
+    "likes": [
+      "Occult",
+      "Japan"
+    ],
+    "dislikes": [
+      "Sour plums"
+    ],
+    "height": "174 cm (JP) 5'7\" (ENG)",
+    "weight": "50 kg (JP) 110 lbs (ENG)",
+    "gender": "Female",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa 2: Goodbye Despair"
+  },
+  "Teruteru Hanamura": {
+    "likes": [
+      "Momma"
+    ],
+    "dislikes": [
+      "Junk food"
+    ],
+    "height": "133 cm (JP) 4'3\" (ENG)",
+    "weight": "69 kg (JP) 152 lbs (ENG)",
+    "gender": "Male",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa 2: Goodbye Despair"
+  },
+  "Komaru Naegi": {
+    "likes": [
+      "Girl's Manga",
+      "Whatever's trending"
+    ],
+    "dislikes": [
+      "Lightning",
+      "Rainy season"
+    ],
+    "height": "163 cm (JP) 5'4\" (ENG)",
+    "weight": "49 kg (JP) 108 lbs (ENG)",
+    "gender": "Female",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc"
+  },
+  "Yuta Asahina": {
+    "likes": [
+      "Sweet bean paste",
+      "Track and field"
+    ],
+    "dislikes": [
+      "Math",
+      "Boredom"
+    ],
+    "height": "168 cm (JP) 5'5\" (ENG)",
+    "weight": "59 kg (JP) 130 lbs (ENG)",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa Another Episode: Ultra Despair Girls"
+  },
+  "Taichi Fujisaki": {
+    "likes": [
+      "Laptops",
+      "His child"
+    ],
+    "dislikes": [
+      "Snakes",
+      "Frogs"
+    ],
+    "height": "176 cm (JP) 5'8\" (ENG)",
+    "weight": "68 kg (JP) 150 lbs (ENG)",
+    "gender": "Male",
+    "status": "Unknown",
+    "talent": null,
+    "debut": "Danganronpa: Trigger Happy Havoc (Mentioned) Danganronpa Another Episode: Ultra Despair Girls"
+  },
+  "Hiroko Hagakure": {
+    "likes": [
+      "Cigarettes",
+      "Alcohol"
+    ],
+    "dislikes": [
+      "Mother in Law",
+      "Men with no balls"
+    ],
+    "height": "171 cm (JP) 5'6\" (ENG)",
+    "weight": "52 kg (JP) 115 lbs (ENG)",
+    "gender": "Female",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa Another Episode: Ultra Despair Girls"
+  },
+  "Shirokuma": {
+    "likes": [
+      "World peace",
+      "Flower meadows"
+    ],
+    "dislikes": [
+      "Fighting",
+      "Verbal abuse"
+    ],
+    "height": "100 cm (JP) 3'3\" (ENG)",
+    "weight": null,
+    "gender": "Male",
+    "status": "Inactive",
+    "talent": null,
+    "debut": "Danganronpa Another Episode: Ultra Despair Girls"
+  },
+  "Kurokuma": {
+    "likes": [
+      "Good vibes",
+      "Dope things"
+    ],
+    "dislikes": [
+      "Wack things",
+      "Shit rhymes"
+    ],
+    "height": "100 cm (JP) 3'3\" (ENG)",
+    "weight": null,
+    "gender": "Male",
+    "status": "Inactive",
+    "talent": null,
+    "debut": "Danganronpa Another Episode: Ultra Despair Girls"
+  },
+  "Jataro Kemuri": {
+    "likes": [
+      "Being hated",
+      "Washing machines"
+    ],
+    "dislikes": [
+      "Being liked",
+      "Himself"
+    ],
+    "height": "130 cm (JP) 4'3\" (ENG)",
+    "weight": "30 kg (JP) 66 lbs (ENG)",
+    "gender": "Male",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa Another Episode: Ultra Despair Girls"
+  },
+  "Kotoko Utsugi": {
+    "likes": [
+      "Peeled chestnuts",
+      "Adorbs stuff"
+    ],
+    "dislikes": [
+      "Unpeeled chestnuts",
+      "Regular cute things"
+    ],
+    "height": "134 cm (JP) 4'5\" (ENG)",
+    "weight": "29 kg (JP) 64 lbs (ENG)",
+    "gender": "Female",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa Another Episode: Ultra Despair Girls"
+  },
+  "Masaru Daimon": {
+    "likes": [
+      "Soccer",
+      "Vaulting"
+    ],
+    "dislikes": [
+      "Math",
+      "Cigarettes"
+    ],
+    "height": "131 cm (JP) 4'3\" (ENG)",
+    "weight": "35 kg (JP) 77 lbs (ENG)",
+    "gender": "Male",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa Another Episode: Ultra Despair Girls"
+  },
+  "Monaca Towa": {
+    "likes": [
+      "Free period",
+      "Warm futons"
+    ],
+    "dislikes": [
+      "Alone time",
+      "Cold meals"
+    ],
+    "height": "134 cm (JP) 4'4\" (ENG)",
+    "weight": "28 kg (JP) 62 lbs (ENG)",
+    "gender": "Female",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa Another Episode: Ultra Despair Girls"
+  },
+  "Nagisa Shingetsu": {
+    "likes": [
+      "Dictionaries",
+      "Monaca"
+    ],
+    "dislikes": [
+      "Earthworms",
+      "Needles"
+    ],
+    "height": "137 cm (JP) 4'6\" (ENG)",
+    "weight": "33 kg (JP) 73 lbs (ENG)",
+    "gender": "Male",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa Another Episode: Ultra Despair Girls"
+  },
+  "Haiji Towa": {
+    "likes": [
+      "Young girls",
+      "Quiet girls"
+    ],
+    "dislikes": [
+      "Old girls",
+      "Noisy girls"
+    ],
+    "height": "188 cm (JP) 6'2\" (ENG)",
+    "weight": "72 kg (JP) 159 lb (ENG)",
+    "gender": "Male",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa Another Episode: Ultra Despair Girls"
+  },
+  "Kaede Akamatsu": {
+    "likes": [
+      "Piano keys"
+    ],
+    "dislikes": [
+      "Bicycles"
+    ],
+    "height": "167 cm (JP) 5'8\" (ENG)",
+    "weight": "53 kg (JP) 117 lbs (ENG)",
+    "gender": "Female",
+    "status": "Deceased",
+    "talent": "Ultimate Pianist",
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "Angie Yonaga": {
+    "likes": [
+      "Avocados"
+    ],
+    "dislikes": [
+      "Humidity"
+    ],
+    "height": "157 cm (JP) 5'1\" (ENG)",
+    "weight": "41 kg (JP) 90 lbs (ENG)",
+    "gender": "Female",
+    "status": "Deceased",
+    "talent": "Ultimate Artist",
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "Gonta Gokuhara": {
+    "likes": [
+      "Arthropods"
+    ],
+    "dislikes": [
+      "Bananas"
+    ],
+    "height": "198 cm (JP) 6'6\" (ENG)",
+    "weight": "94 kg (JP) 207 lbs (ENG)",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": "Ultimate Entomologist",
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "Himiko Yumeno": {
+    "likes": [
+      "Small spaces"
+    ],
+    "dislikes": [
+      "The ocean"
+    ],
+    "height": "4'11 (ENG) 150 cm (JP)",
+    "weight": "39 kg (JP) 86 lbs (ENG)",
+    "gender": "Female",
+    "status": "Alive",
+    "talent": "Ultimate Magician",
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "K1-B0": {
+    "likes": [
+      "100-240 volts"
+    ],
+    "dislikes": [
+      "Vending machines"
+    ],
+    "height": "160 cm (JP) 5'3\" (ENG)",
+    "weight": "89 kg (JP) 196 lbs (ENG)",
+    "gender": "None, considered male",
+    "status": "Inactive",
+    "talent": null,
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "Kaito Momota": {
+    "likes": [
+      "House plants"
+    ],
+    "dislikes": [
+      "The occult"
+    ],
+    "height": "184 cm (JP) 6'0\" (ENG)",
+    "weight": "74 kg (JP) 163 lbs (ENG)",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": "Ultimate Astronaut",
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "Kirumi Tojo": {
+    "likes": [
+      "Cleaning"
+    ],
+    "dislikes": [
+      "Taking days off"
+    ],
+    "height": "176 cm (JP) 5'9\" (ENG)",
+    "weight": "52 kg (JP) 115 lbs (ENG)",
+    "gender": "Female",
+    "status": "Deceased",
+    "talent": "Ultimate Maid",
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "Kokichi Oma": {
+    "likes": [
+      "Carbonated drinks"
+    ],
+    "dislikes": [
+      "Pig feet"
+    ],
+    "height": "156 cm (JP) 5'1\" (ENG)",
+    "weight": "44 kg (JP) 97 lbs (ENG)",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": "Ultimate Supreme Leader",
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "Korekiyo Shinguji": {
+    "likes": [
+      "Straw ropes"
+    ],
+    "dislikes": [
+      "Air conditioning"
+    ],
+    "height": "188 cm (JP) 6'2\" (ENG)",
+    "weight": "65 kg (JP) 143 lbs (ENG)",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": "Ultimate Anthropologist",
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "Maki Harukawa": {
+    "likes": [
+      "Morning lake shores"
+    ],
+    "dislikes": [
+      "Winter lake shores"
+    ],
+    "height": "162 cm (JP) 5'4\" (ENG)",
+    "weight": "44 kg (JP) 97 lbs (ENG)",
+    "gender": "Female",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "Miu Iruma": {
+    "likes": [
+      "Children's television"
+    ],
+    "dislikes": [
+      "Taking it easy"
+    ],
+    "height": "173 cm (JP) 5'8\" (ENG)",
+    "weight": "56 kg (JP) 123 lbs (ENG)",
+    "gender": "Female",
+    "status": "Deceased",
+    "talent": "Ultimate Inventor",
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "Rantaro Amami": {
+    "likes": [
+      "Extraterritorial rights"
+    ],
+    "dislikes": [
+      "Cars"
+    ],
+    "height": "179 cm (JP) 5'10\" (ENG)",
+    "weight": "62 kg (JP) 137 lbs (ENG)",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "Ryoma Hoshi": {
+    "likes": [
+      "Russian blues"
+    ],
+    "dislikes": [
+      "Whitetip reef sharks"
+    ],
+    "height": "105 cm (JP) 3'5\" (ENG)",
+    "weight": "40 kg (JP) 88 lbs (ENG)",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": "Ultimate Tennis Pro",
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "Shuichi Saihara": {
+    "likes": [
+      "Novels"
+    ],
+    "dislikes": [
+      "Gossip"
+    ],
+    "height": "171 cm (JP) 5'7\" (ENG)",
+    "weight": "58 kg (JP) 128 lbs (ENG)",
+    "gender": "Male",
+    "status": "Alive",
+    "talent": "Ultimate Detective",
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "Tenko Chabashira": {
+    "likes": [
+      "Nunchucks"
+    ],
+    "dislikes": [
+      "Men"
+    ],
+    "height": "165 cm (JP) 5'5\" (ENG)",
+    "weight": "52 kg (JP) 115 lbs (ENG)",
+    "gender": "Female",
+    "status": "Deceased",
+    "talent": "Ultimate Aikido Master",
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "Tsumugi Shirogane": {
+    "likes": [
+      "EVA foam"
+    ],
+    "dislikes": [
+      "Disorderly queues"
+    ],
+    "height": "174 cm (JP) 5'9\" (ENG)",
+    "weight": "51 kg (JP) 112 lbs (ENG)",
+    "gender": "Female",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "Chisa Yukizome": {
+    "likes": [
+      "Cleaning",
+      "Laundry",
+      "Cooking"
+    ],
+    "dislikes": [
+      "Cockroaches"
+    ],
+    "height": "161 cm",
+    "weight": "45 kg",
+    "gender": "Female",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa V3: Killing Harmony (Bonus Mode; Cameo)"
+  },
+  "Daisaku Bandai": {
+    "likes": [
+      "Organic vegetables"
+    ],
+    "dislikes": [
+      "Supplements"
+    ],
+    "height": "213 cm",
+    "weight": "146 kg",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa V3: Killing Harmony (Bonus Mode; Cameo)"
+  },
+  "Great Gozu": {
+    "likes": [
+      "German suplex"
+    ],
+    "dislikes": [
+      "Weapons"
+    ],
+    "height": "210 cm",
+    "weight": "140 kg",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa V3: Killing Harmony (Bonus Mode; Cameo)"
+  },
+  "Juzo Sakakura": {
+    "likes": [
+      "Sparring",
+      "Sweet foods"
+    ],
+    "dislikes": [
+      "Bitter foods"
+    ],
+    "height": "190 cm",
+    "weight": "85 kg",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa V3: Killing Harmony (Bonus Mode; Cameo)"
+  },
+  "Kazuo Tengan": {
+    "likes": [
+      "Taking walks"
+    ],
+    "dislikes": [
+      "Conflict"
+    ],
+    "height": "140 cm",
+    "weight": "45 kg",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa V3: Killing Harmony (Bonus Mode; Cameo)"
+  },
+  "Koichi Kizakura": {
+    "likes": [
+      "Bourbon whiskey"
+    ],
+    "dislikes": [
+      "Non-alcoholic beer"
+    ],
+    "height": "176 cm",
+    "weight": "66 kg",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa V3: Killing Harmony (Bonus Mode; Cameo)"
+  },
+  "Kyosuke Munakata": {
+    "likes": [
+      "Discipline",
+      "Tamagoyaki"
+    ],
+    "dislikes": [
+      "Chaos",
+      "Greasy foods"
+    ],
+    "height": "186 cm",
+    "weight": "72 kg",
+    "gender": "Male",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa V3: Killing Harmony (Bonus Mode; Cameo)"
+  },
+  "Ruruka Ando": {
+    "likes": [
+      "Macarons",
+      "Scones"
+    ],
+    "dislikes": [
+      "Snack food"
+    ],
+    "height": "162 cm",
+    "weight": "45 kg",
+    "gender": "Female",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa V3: Killing Harmony (Bonus Mode; Cameo)"
+  },
+  "Ryota Mitarai": {
+    "likes": [
+      "Anime",
+      "Manga",
+      "Games"
+    ],
+    "dislikes": [
+      "Deadlines"
+    ],
+    "height": "160 cm",
+    "weight": "48 kg",
+    "gender": "Male",
+    "status": "Alive",
+    "talent": null,
+    "debut": "Danganronpa V3: Killing Harmony (Bonus Mode; Cameo)"
+  },
+  "Sonosuke Izayoi": {
+    "likes": [
+      "Ruruka Ando",
+      "Sweets"
+    ],
+    "dislikes": [
+      "Rust"
+    ],
+    "height": "180 cm",
+    "weight": "70 kg",
+    "gender": "Male",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa V3: Killing Harmony (Bonus Mode; Cameo)"
+  },
+  "Seiko Kimura": {
+    "likes": [
+      "Mixing medicines"
+    ],
+    "dislikes": [
+      "Loud noises"
+    ],
+    "height": "160 cm",
+    "weight": "40 kg",
+    "gender": "Female",
+    "status": "Deceased",
+    "talent": null,
+    "debut": "Danganronpa V3: Killing Harmony (Bonus Mode; Cameo)"
+  },
+  "Miaya Gekkogahara": {
+    "likes": null,
+    "dislikes": null,
+    "height": "153 cm",
+    "weight": "41 kg",
+    "gender": "Female",
+    "status": "Deceased",
+    "talent": null,
+    "debut": null
+  },
+  "Monodam": {
+    "likes": null,
+    "dislikes": null,
+    "height": "40 cm (JP) 1'7\" (ENG)",
+    "weight": null,
+    "gender": "Male",
+    "status": "Inactive",
+    "talent": null,
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "Monokid": {
+    "likes": null,
+    "dislikes": null,
+    "height": "40 cm (JP) 1'7\" (ENG)",
+    "weight": null,
+    "gender": "Male",
+    "status": "Inactive",
+    "talent": null,
+    "debut": null
+  },
+  "Monophanie": {
+    "likes": null,
+    "dislikes": null,
+    "height": "40 cm (JP) 1'7\" (ENG)",
+    "weight": null,
+    "gender": "Female",
+    "status": "Inactive",
+    "talent": null,
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "Monosuke": {
+    "likes": null,
+    "dislikes": null,
+    "height": "40 cm (JP) 1'7\" (ENG)",
+    "weight": null,
+    "gender": "Male",
+    "status": "Inactive",
+    "talent": null,
+    "debut": "Danganronpa V3: Killing Harmony"
+  },
+  "Monotaro": {
+    "likes": null,
+    "dislikes": null,
+    "height": "40 cm (JP) 1'7\" (ENG)",
+    "weight": null,
+    "gender": "Male",
+    "status": "Inactive",
+    "talent": null,
+    "debut": null
+  }
+}

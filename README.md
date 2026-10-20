@@ -6,14 +6,14 @@ There are **two versions** in this repository:
 
 | Version | Where | What it is |
 | --- | --- | --- |
-| 🌐 **Web game** | [`web/`](web/) | The daily puzzle, playable in the browser and deployable to GitHub Pages |
+| 🌐 **Web game** | [`docs/`](docs/) | The daily puzzle, playable in the browser and deployable to GitHub Pages |
 | 💻 **Terminal game** | [`main.py`](main.py) | The original command-line version |
 
 ---
 
 ## 🌐 Play it online (GitHub Pages)
 
-The web game lives in the [`web/`](web/) folder and has no build step — it is plain
+The web game lives in the [`docs/`](docs/) folder and has no build step — it is plain
 HTML, CSS and JavaScript, so GitHub Pages can serve it as-is.
 
 ### 1. Publish the site
@@ -28,7 +28,8 @@ HTML, CSS and JavaScript, so GitHub Pages can serve it as-is.
 
 2. On GitHub, open the repository → **Settings → Pages**.
 3. In *Build and deployment* choose **Deploy from a branch**.
-4. Pick the branch **`main`** and the folder **`/web`**, then press **Save**.
+4. Pick the branch **`main`** and the folder **`/docs`** (or **`/ (root)`** if you
+   prefer to serve the site from the repository root), then press **Save**.
 5. Wait for the green check mark. The game is now live at:
 
    ```
@@ -37,8 +38,8 @@ HTML, CSS and JavaScript, so GitHub Pages can serve it as-is.
 
    For this repository that is **https://nihhiu.github.io/Dangandle/**
 
-> `web/.nojekyll` is committed on purpose, so GitHub publishes the folder exactly as
-> it is on disk.
+> `docs/.nojekyll` is committed on purpose, so GitHub publishes the folder exactly
+> as it is on disk.
 
 ### 2. Test it locally before publishing
 
@@ -53,19 +54,24 @@ python scripts/serve_web.py        # http://127.0.0.1:8765/
 * You have **10 attempts**. Every guess is written as a single row:
   `image | name | title | gender | height | weight | status | talent type | likes | dislikes | debut`.
   The newest row is always on top.
-* Each of the nine clue cells is shaded on a black-to-white scale:
-  * **white** — exact match
-  * **mid grey** — partial match (same role word, same game series, a number close
-    to the secret…)
-  * **dark grey** — nothing in common
-  * **black** — the secret has no data for that attribute
+* Each of the nine clue cells is coloured:
+  * 🟩 **green** (`#7DFF5E`) — exact match
+  * 🟨 **yellow** (`#FFD400`) — partial match (same role word, same game series, a
+    number close to the secret…)
+  * 🩷 **pink** (`#FF6FA5`) — nothing in common
+  * ⬛ **dark** — the secret has no data for that attribute
   * **↑ ↓** — the secret is taller/shorter or heavier/lighter than your guess
+* The **likes** and **dislikes** are the ones written on the official profile of
+  each character on the [Danganronpa Wiki](https://danganronpa.fandom.com/wiki/Game_Characters)
+  (curry and trendy things for Makoto, hair braids for Kyoko, fresh towels for
+  Nekomaru…). Characters without an official profile use the fan categories
+  listed in *How to play*.
 * A live **candidate counter** shows how many characters are still consistent with
   every clue you have seen.
 * `?d=2026-01-31` opens an archived puzzle.
 * Progress and statistics are stored in the browser (`localStorage`).
 
-Full details: [`web/README.md`](web/README.md).
+Full details: [`docs/README.md`](docs/README.md).
 
 ---
 
@@ -116,27 +122,48 @@ The game uses a CSV file (`characters.csv`) with the following columns:
 ---
 
 ## Likes and Dislikes Guide
-In the `Likes` and `Dislikes` columns, emojis are used to represent categories or specific interests. Here is a guide to their meanings, grouped by type:
+The `Likes` and `Dislikes` columns hold the official profile of every character,
+taken from the [Danganronpa Wiki](https://danganronpa.fandom.com/wiki/Game_Characters)
+(the same lists that appear in the game menus and in the official artbook), for
+example:
 
-| Emoji | Meaning                      |
-|-------|------------------------------|
-| 🍽️    | Meal                         |
-| 🍩    | Snack                        |
-| 📚    | Objects                      |
-| 💻    | Intelectual, Tech            |
-| 🎧    | Sound                        |
-| 🏳️    | Country                      |
-| 🐕    | Animal                       |
-| 🌿    | Plants                       |
-| 🛏️    | Furniture, Rooms             |
-| 👕    | Clothes                      |
-| 🍹    | Alcohol, Tobacco, Drugs      |
-| ⛅    | Weather                      |
-| 🎬    | Entertainment                |
-| 🏃    | Physical Activity            |
-| 👧    | Girl                         |
-| 👦    | Boy                          |
-| 📱    | Social                       |
+| Character | Likes | Dislikes |
+|-----------|-------|----------|
+| Makoto Naegi | Curry, Trendy things | Dried mackerel, Dried bean curd |
+| Kyoko Kirigiri | Hair braids | Goya, Coriander |
+| Aoi Asahina | Donuts | Calculating |
+| Nekomaru Nidai | Freshly washed towels | Lazy people |
+| Sonia Nevermind | Occult, Japan | Sour plums |
+
+The characters without an official profile (Monokuma, Chihiro, Leon, Sayaka…) use
+the fan categories below, written in words so they are easy to understand:
+
+| Category | Meaning |
+|----------|---------|
+| Meals | home cooking, restaurants, food in general |
+| Snacks / Sweets / Bread | sweets, cakes, little bites, bakery products |
+| Social media | phones, chats, networks |
+| Computers | gadgets, programming, the web |
+| Entertainment | films, series, games, shows |
+| Music | songs, concerts, sound |
+| Sports | training, running, competitions |
+| Books | reading, study, novels |
+| Animals | pets, wildlife |
+| Plants | flowers, gardens, greenery |
+| Interiors | rooms, furniture, decoration |
+| Clothes | fashion, outfits |
+| Alcohol | drinks, tobacco, party |
+| Weather | sun, rain, climate |
+| Countries | travel abroad, flags, cultures |
+| Girls / Boys | the company of girls / boys |
+| Billiards | pool, snooker, cues |
+
+The data is refreshed with:
+
+```bash
+python scripts/fetch_wiki_profiles.py    # downloads the wiki profiles
+python scripts/import_wiki_profiles.py   # merges them into characters.csv
+```
 
 ---
 
@@ -193,8 +220,12 @@ After each guess, the game uses emojis to show how close you are:
 ## Development
 
 ```bash
-# rebuild the web dataset (web/js/characters.js + web/images/<id>.webp)
+# rebuild the web dataset (docs/js/characters.js + docs/images/<id>.webp)
 python scripts/build_web_data.py
+
+# refresh the official likes/dislikes from the Danganronpa Wiki
+python scripts/fetch_wiki_profiles.py
+python scripts/import_wiki_profiles.py
 
 # serve the web game locally with no-cache headers
 python scripts/serve_web.py
@@ -203,9 +234,12 @@ python scripts/serve_web.py
 | Path | Purpose |
 | --- | --- |
 | `resources/characters.csv` | source of truth for every character attribute |
+| `resources/wiki-profiles.json` | the official profiles downloaded from the Danganronpa Wiki |
 | `resources/image-mapping.csv` | which portrait file became which id |
 | `scripts/build_web_data.py` | regenerates the dataset and renames the portraits |
+| `scripts/fetch_wiki_profiles.py` | downloads the official character profiles |
+| `scripts/import_wiki_profiles.py` | merges them into `characters.csv` |
 | `scripts/serve_web.py` | tiny local static server for the web game |
-| `web/` | the browser game (this is what GitHub Pages publishes) |
+| `docs/` | the browser game (this is what GitHub Pages publishes) |
 
 ---

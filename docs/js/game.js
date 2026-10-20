@@ -24,13 +24,28 @@
     { key: "appearance", label: "Debut", type: "game" }
   ];
 
-  var EMOJI_KEY = [
-    ["\u{1F4F1}", "Social / phones"], ["\u{1F37D}\uFE0F", "Meals"], ["\u{1F369}", "Snacks"],
-    ["\u{1F4BB}", "Computers"], ["\u{1F3AC}", "Entertainment"], ["\u{1F3A7}", "Sound / music"],
-    ["\u{1F3C3}", "Physical activity"], ["\u{1F4DA}", "Books"], ["\u{1F415}", "Animals"],
-    ["\u{1F33F}", "Plants"], ["\u{1F6CF}\uFE0F", "Rooms / furniture"], ["\u{1F455}", "Clothes"],
-    ["\u{1F379}", "Alcohol / drugs"], ["\u{26C5}", "Weather"], ["\u{1F3C1}\uFE0F", "Countries"],
-    ["\u{1F467}", "Girls"], ["\u{1F466}", "Boys"], ["\u{1F3B1}", "Billiards"]
+  /* Fan categories used for the characters that have no official profile. */
+  var CATEGORY_KEY = [
+    ["Meals", "home cooking, restaurants, food in general"],
+    ["Snacks", "sweets, cakes, little bites"],
+    ["Sweets", "candy, chocolate, desserts"],
+    ["Bread", "bakery products"],
+    ["Social media", "phones, chats, networks"],
+    ["Computers", "gadgets, programming, the web"],
+    ["Entertainment", "films, series, games, shows"],
+    ["Music", "songs, concerts, sound"],
+    ["Sports", "training, running, competitions"],
+    ["Books", "reading, study, novels"],
+    ["Animals", "pets, wildlife"],
+    ["Plants", "flowers, gardens, greenery"],
+    ["Interiors", "rooms, furniture, decoration"],
+    ["Clothes", "fashion, outfits"],
+    ["Alcohol", "drinks, tobacco, party"],
+    ["Weather", "sun, rain, climate"],
+    ["Countries", "travel abroad, flags, cultures"],
+    ["Girls", "the company of girls"],
+    ["Boys", "the company of boys"],
+    ["Billiards", "pool, snooker, cues"]
   ];
 
   /* ------------------------------------------------------------------ utils */
@@ -144,8 +159,8 @@
       case "number":
         g = guess[attr.key];
         t = target[attr.key];
+        if (g === null || g === undefined) return { state: "unknown" };
         if (t === null || t === undefined) return { state: "unknown" };
-        if (g === null || g === undefined) return { state: "none" };
         if (g === t) return { state: "exact" };
         diff = t - g;
         if (Math.abs(diff) <= tolerance(t)) return { state: "close", hint: diff > 0 ? "↑" : "↓" };
@@ -154,6 +169,7 @@
       case "set":
         g = guess[attr.key] || [];
         t = target[attr.key] || [];
+        if (!g.length) return { state: "unknown" };
         if (!t.length) return { state: "unknown" };
         if (sameSet(g, t)) return { state: "exact" };
         for (i = 0; i < g.length; i++) {
@@ -346,8 +362,8 @@
     var value = character[attr.key];
     switch (attr.type) {
       case "text": return (value || []).join(", ");
-      case "number": return value === null || value === undefined ? "Unknown" : value + " " + attr.unit;
-      case "set": return (value || []).length ? value.join(" ") : "Unknown";
+      case "number": return value === null || value === undefined ? "—" : value + " " + attr.unit;
+      case "set": return (value || []).length ? value.join(" ") : "—";
       case "game": return value;
       default:
         if (attr.key === "talent" && value === "NAN") return "Unassigned";
@@ -372,7 +388,7 @@
       if (attr.type === "set") {
         var items = guess[attr.key] || [];
         if (!items.length) {
-          cell.appendChild(el("span", null, "Unknown"));
+          cell.appendChild(el("span", null, "—"));
         } else {
           items.forEach(function (item) {
             var chip = el("span", "emo", item);
@@ -381,7 +397,13 @@
           });
         }
       } else {
-        cell.appendChild(el("span", null, displayValue(attr, guess)));
+        var text = displayValue(attr, guess);
+        if (attr.type === "text") {
+          var span = el("span", "clamp", text);
+          cell.appendChild(span);
+        } else {
+          cell.appendChild(el("span", null, text));
+        }
       }
       if (fb[attr.key].hint) cell.appendChild(el("span", "hint", fb[attr.key].hint));
       row.appendChild(cell);
@@ -482,7 +504,7 @@
         if (s === "exact") return "🟩";
         if (s === "close") return "🟨";
         if (s === "unknown") return "⬜";
-        return "🟥";
+        return "🩷";
       }).join("");
       lines.push(row);
     });
@@ -747,7 +769,7 @@
     var key = $("#emoji-key");
     if (!key) return;
     key.innerHTML = "";
-    EMOJI_KEY.forEach(function (pair) {
+    CATEGORY_KEY.forEach(function (pair) {
       var item = el("li");
       item.appendChild(el("b", null, pair[0]));
       item.appendChild(el("span", null, pair[1]));

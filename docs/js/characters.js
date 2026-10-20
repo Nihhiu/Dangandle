@@ -13,10 +13,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Physical",
     "likes": [
-      "🍩"
+      "Donuts"
     ],
     "dislikes": [
-      "💻"
+      "Calculating"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -40,12 +40,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Intellectual",
     "likes": [
-      "🍩",
-      "🏳️"
+      "Coffee",
+      "French"
     ],
     "dislikes": [
-      "📱",
-      "🍽️"
+      "Plebeians/Commoners",
+      "Microwave meals"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -69,12 +69,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Intellectual",
     "likes": [
-      "🐕",
-      "📱"
+      "Animals",
+      "Social media"
     ],
     "dislikes": [
-      "📱",
-      "🍽️"
+      "Social media",
+      "Meals"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -98,11 +98,11 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Intellectual",
     "likes": [
-      "💻",
-      "📱"
+      "Computers",
+      "Social media"
     ],
     "dislikes": [
-      "📱"
+      "Social media"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -123,11 +123,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Physical",
     "likes": [
-      "👦"
+      "Byakuya Togami",
+      "Adorable boys"
     ],
     "dislikes": [
-      "👧",
-      "👦"
+      "Unadorable boys",
+      "Unadorable girls"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -151,11 +152,11 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Creative",
     "likes": [
-      "🎬",
-      "👧"
+      "Entertainment",
+      "Girls"
     ],
     "dislikes": [
-      "📱"
+      "Social media"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -176,11 +177,11 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "NAN",
     "likes": [
-      "👕",
-      "👧"
+      "Suits",
+      "His daughter"
     ],
     "dislikes": [
-      "🍹"
+      "Tobacco"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -224,10 +225,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Intellectual",
     "likes": [
-      "📱"
+      "Social media"
     ],
     "dislikes": [
-      "🏃"
+      "Sports"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -248,11 +249,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "NAN",
     "likes": [
-      "🎬",
-      "📱"
+      "Girl's Manga",
+      "Whatever's trending"
     ],
     "dislikes": [
-      "⛅"
+      "Lightning",
+      "Rainy season"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -273,10 +275,11 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Intellectual",
     "likes": [
-      "👧"
+      "Hair braids"
     ],
     "dislikes": [
-      "🌿"
+      "Goya",
+      "Coriander"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -297,10 +300,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Physical",
     "likes": [
-      "🎧"
+      "Music"
     ],
     "dislikes": [
-      "💻"
+      "Computers"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -325,11 +328,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Special",
     "likes": [
-      "🍽️",
-      "📱"
+      "Curry",
+      "Trendy things"
     ],
     "dislikes": [
-      "🍩"
+      "Dried mackerel",
+      "Dried bean curd"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -350,11 +354,11 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Physical",
     "likes": [
-      "🐕",
-      "🛏️"
+      "Animals",
+      "Interiors"
     ],
     "dislikes": [
-      "📱"
+      "Social media"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -375,12 +379,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Inactive",
     "talent": "NAN",
     "likes": [
-      "📱",
-      "🍽️",
-      "🍩"
+      "Social media",
+      "Meals",
+      "Snacks"
     ],
     "dislikes": [
-      "📱"
+      "Social media"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -400,12 +404,8 @@ window.DANGANDLE_CHARACTERS = [
     "weight": null,
     "status": "Inactive",
     "talent": "Special",
-    "likes": [
-      "💻"
-    ],
-    "dislikes": [
-      "🎱"
-    ],
+    "likes": [],
+    "dislikes": [],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
     "series": "main",
@@ -422,14 +422,15 @@ window.DANGANDLE_CHARACTERS = [
     ],
     "gender": "Female",
     "height": 169,
-    "weight": 69,
+    "weight": 44,
     "status": "Deceased",
     "talent": "Physical",
     "likes": [
-      "📚"
+      "Her sister",
+      "Army knives"
     ],
     "dislikes": [
-      "📱"
+      "Make-up"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -449,10 +450,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Physical",
     "likes": [
-      "🎧"
+      "Music"
     ],
     "dislikes": [
-      "🎬"
+      "Entertainment"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -473,10 +474,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Creative",
     "likes": [
-      "📱"
+      "Social media"
     ],
     "dislikes": [
-      "📱"
+      "Social media"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -497,11 +498,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Creative",
     "likes": [
-      "👦",
-      "🎬"
+      "Byakuya Togami",
+      "Romance novels"
     ],
     "dislikes": [
-      "🎬"
+      "Light novels",
+      "Manga"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -522,10 +524,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Special",
     "likes": [
-      "📚"
+      "Money"
     ],
     "dislikes": [
-      "🎬"
+      "Hidden cameras"
     ],
     "appearance": "DR1",
     "appearanceLabel": "Danganronpa 1",
@@ -546,11 +548,11 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Physical",
     "likes": [
-      "🏃",
-      "🍽️"
+      "Fighting",
+      "Meat"
     ],
     "dislikes": [
-      "🏃"
+      "Working hard"
     ],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
@@ -594,10 +596,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Intellectual",
     "likes": [
-      "🎬"
+      "Games (even crappy games)"
     ],
     "dislikes": [
-      "📚"
+      "Alarm clocks"
     ],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
@@ -618,10 +620,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Physical",
     "likes": [
-      "🍩"
+      "Fried dough cookies"
     ],
     "dislikes": [
-      "🍹"
+      "Milk"
     ],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
@@ -642,10 +644,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Intellectual",
     "likes": [
-      "🐕"
+      "Four Dark Devas of Destruction"
     ],
     "dislikes": [
-      "🌿"
+      "Earthly life"
     ],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
@@ -667,10 +669,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "NAN",
     "likes": [
-      "🍩"
+      "Kusamochi"
     ],
     "dislikes": [
-      "🍩"
+      "Sakuramochi"
     ],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
@@ -691,11 +693,11 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Creative",
     "likes": [
-      "🍽️"
+      "Squish squishy"
     ],
     "dislikes": [
-      "📱",
-      "🍩"
+      "Lectures",
+      "Sour stuff"
     ],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
@@ -716,11 +718,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Creative",
     "likes": [
-      "🏃",
-      "🎬"
+      "Walking",
+      "Napping",
+      "Gaming"
     ],
     "dislikes": [
-      "🎬"
+      "Boredom"
     ],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
@@ -760,10 +763,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Intellectual",
     "likes": [
-      "🍹"
+      "Coke"
     ],
     "dislikes": [
-      "🍩"
+      "Sugar-free anything"
     ],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
@@ -784,10 +787,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Creative",
     "likes": [
-      "🏃"
+      "Traveling alone"
     ],
     "dislikes": [
-      "📱"
+      "Bad manners"
     ],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
@@ -808,10 +811,11 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Intellectual",
     "likes": [
-      "🍹"
+      "Bathroom smells",
+      "Alcohol"
     ],
     "dislikes": [
-      "👕"
+      "Oversized things"
     ],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
@@ -831,12 +835,8 @@ window.DANGANDLE_CHARACTERS = [
     "weight": null,
     "status": "Inactive",
     "talent": "Special",
-    "likes": [
-      "💻"
-    ],
-    "dislikes": [
-      "📱"
-    ],
+    "likes": [],
+    "dislikes": [],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
     "series": "main",
@@ -855,12 +855,8 @@ window.DANGANDLE_CHARACTERS = [
     "weight": null,
     "status": "Inactive",
     "talent": "Special",
-    "likes": [
-      "💻"
-    ],
-    "dislikes": [
-      "🎬"
-    ],
+    "likes": [],
+    "dislikes": [],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
     "series": "main",
@@ -881,12 +877,8 @@ window.DANGANDLE_CHARACTERS = [
     "weight": null,
     "status": "Inactive",
     "talent": "Special",
-    "likes": [
-      "🍩"
-    ],
-    "dislikes": [
-      "💻"
-    ],
+    "likes": [],
+    "dislikes": [],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
     "series": "main",
@@ -908,12 +900,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Special",
     "likes": [
-      "📚",
-      "🧑"
+      "Pretty/beautiful things",
+      "Beautiful people"
     ],
     "dislikes": [
-      "🎧",
-      "🧑"
+      "Noisy places",
+      "Ugly people"
     ],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
@@ -936,10 +928,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Physical",
     "likes": [
-      "📚"
+      "Freshly washed towels"
     ],
     "dislikes": [
-      "🧑"
+      "Lazy people"
     ],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
@@ -960,10 +952,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Physical",
     "likes": [
-      "📚"
+      "Black"
     ],
     "dislikes": [
-      "🍩"
+      "Candy"
     ],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
@@ -984,11 +976,11 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Intellectual",
     "likes": [
-      "🎬",
-      "🏳️"
+      "Occult",
+      "Japan"
     ],
     "dislikes": [
-      "🍩"
+      "Sour plums"
     ],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
@@ -1009,10 +1001,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Creative",
     "likes": [
-      "👧"
+      "Momma"
     ],
     "dislikes": [
-      "🍽️"
+      "Junk food"
     ],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
@@ -1035,10 +1027,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Inactive",
     "talent": "NAN",
     "likes": [
-      "📱"
+      "Social media"
     ],
     "dislikes": [
-      "📱"
+      "Social media"
     ],
     "appearance": "DR2",
     "appearanceLabel": "Danganronpa 2",
@@ -1061,10 +1053,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "NAN",
     "likes": [
-      "📱"
+      "Social media"
     ],
     "dislikes": [
-      "🍩"
+      "Snacks"
     ],
     "appearance": "UDG",
     "appearanceLabel": "Another Episode",
@@ -1084,10 +1076,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Unknown",
     "talent": "NAN",
     "likes": [
-      "👧"
+      "Young girls",
+      "Quiet girls"
     ],
     "dislikes": [
-      "👧"
+      "Old girls",
+      "Noisy girls"
     ],
     "appearance": "UDG",
     "appearanceLabel": "Another Episode",
@@ -1108,11 +1102,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "NAN",
     "likes": [
-      "🍹"
+      "Cigarettes",
+      "Alcohol"
     ],
     "dislikes": [
-      "👧",
-      "👦"
+      "Mother in Law",
+      "Men with no balls"
     ],
     "appearance": "UDG",
     "appearanceLabel": "Another Episode",
@@ -1133,11 +1128,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Creative",
     "likes": [
-      "📱",
-      "🛏️"
+      "Being hated",
+      "Washing machines"
     ],
     "dislikes": [
-      "📱"
+      "Being liked",
+      "Himself"
     ],
     "appearance": "UDG",
     "appearanceLabel": "Another Episode",
@@ -1158,11 +1154,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Creative",
     "likes": [
-      "🍩"
+      "Peeled chestnuts",
+      "Adorbs stuff"
     ],
     "dislikes": [
-      "🍩",
-      "📚"
+      "Unpeeled chestnuts",
+      "Regular cute things"
     ],
     "appearance": "UDG",
     "appearanceLabel": "Another Episode",
@@ -1183,11 +1180,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Inactive",
     "talent": "NAN",
     "likes": [
-      "📱"
+      "Good vibes",
+      "Dope things"
     ],
     "dislikes": [
-      "📚",
-      "🎧"
+      "Wack things",
+      "Shit rhymes"
     ],
     "appearance": "UDG",
     "appearanceLabel": "Another Episode",
@@ -1208,11 +1206,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Physical",
     "likes": [
-      "🏃"
+      "Soccer",
+      "Vaulting"
     ],
     "dislikes": [
-      "💻",
-      "🍹"
+      "Math",
+      "Cigarettes"
     ],
     "appearance": "UDG",
     "appearanceLabel": "Another Episode",
@@ -1233,12 +1232,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Intellectual",
     "likes": [
-      "📱",
-      "🛏️"
+      "Free period",
+      "Warm futons"
     ],
     "dislikes": [
-      "📱",
-      "🍽️"
+      "Alone time",
+      "Cold meals"
     ],
     "appearance": "UDG",
     "appearanceLabel": "Another Episode",
@@ -1260,12 +1259,8 @@ window.DANGANDLE_CHARACTERS = [
     "weight": null,
     "status": "Inactive",
     "talent": "NAN",
-    "likes": [
-      "📚"
-    ],
-    "dislikes": [
-      "🎧"
-    ],
+    "likes": [],
+    "dislikes": [],
     "appearance": "UDG",
     "appearanceLabel": "Another Episode",
     "series": "spin-off",
@@ -1285,12 +1280,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Intellectual",
     "likes": [
-      "📚",
-      "👧"
+      "Dictionaries",
+      "Monaca"
     ],
     "dislikes": [
-      "🐕",
-      "📚"
+      "Earthworms",
+      "Needles"
     ],
     "appearance": "UDG",
     "appearanceLabel": "Another Episode",
@@ -1311,12 +1306,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Inactive",
     "talent": "NAN",
     "likes": [
-      "📱",
-      "🌿"
+      "World peace",
+      "Flower meadows"
     ],
     "dislikes": [
-      "🏃",
-      "📱"
+      "Fighting",
+      "Verbal abuse"
     ],
     "appearance": "UDG",
     "appearanceLabel": "Another Episode",
@@ -1337,11 +1332,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Unknown",
     "talent": "NAN",
     "likes": [
-      "💻",
-      "👦"
+      "Laptops",
+      "His child"
     ],
     "dislikes": [
-      "🐕"
+      "Snakes",
+      "Frogs"
     ],
     "appearance": "UDG",
     "appearanceLabel": "Another Episode",
@@ -1362,12 +1358,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "NAN",
     "likes": [
-      "🍩",
-      "🏃"
+      "Sweet bean paste",
+      "Track and field"
     ],
     "dislikes": [
-      "💻",
-      "🎬"
+      "Math",
+      "Boredom"
     ],
     "appearance": "UDG",
     "appearanceLabel": "Another Episode",
@@ -1389,10 +1385,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Physical",
     "likes": [
-      "🏃"
+      "Cleaning",
+      "Laundry",
+      "Cooking"
     ],
     "dislikes": [
-      "🐕"
+      "Cockroaches"
     ],
     "appearance": "DR3",
     "appearanceLabel": "Danganronpa 3",
@@ -1414,10 +1412,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Physical",
     "likes": [
-      "🌿"
+      "Organic vegetables"
     ],
     "dislikes": [
-      "🍽️"
+      "Supplements"
     ],
     "appearance": "DR3",
     "appearanceLabel": "Danganronpa 3",
@@ -1439,10 +1437,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Physical",
     "likes": [
-      "🏃"
+      "German suplex"
     ],
     "dislikes": [
-      "📚"
+      "Weapons"
     ],
     "appearance": "DR3",
     "appearanceLabel": "Danganronpa 3",
@@ -1464,11 +1462,11 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Physical",
     "likes": [
-      "🏃",
-      "🍩"
+      "Sparring",
+      "Sweet foods"
     ],
     "dislikes": [
-      "🍩"
+      "Bitter foods"
     ],
     "appearance": "DR3",
     "appearanceLabel": "Danganronpa 3",
@@ -1489,10 +1487,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "NAN",
     "likes": [
-      "🏃"
+      "Taking walks"
     ],
     "dislikes": [
-      "📱"
+      "Conflict"
     ],
     "appearance": "DR3",
     "appearanceLabel": "Danganronpa 3",
@@ -1514,10 +1512,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Intellectual",
     "likes": [
-      "🍹"
+      "Bourbon whiskey"
     ],
     "dislikes": [
-      "🍹"
+      "Non-alcoholic beer"
     ],
     "appearance": "DR3",
     "appearanceLabel": "Danganronpa 3",
@@ -1539,12 +1537,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Intellectual",
     "likes": [
-      "📱",
-      "🍽️"
+      "Discipline",
+      "Tamagoyaki"
     ],
     "dislikes": [
-      "📱",
-      "🍽️"
+      "Chaos",
+      "Greasy foods"
     ],
     "appearance": "DR3",
     "appearanceLabel": "Danganronpa 3",
@@ -1557,20 +1555,15 @@ window.DANGANDLE_CHARACTERS = [
     "name": "Miaya Gekkogahara",
     "aliases": [],
     "title": [
-      "Ultimate Anthropologist"
+      "Ultimate Therapist"
     ],
     "gender": "Male",
-    "height": 173,
-    "weight": 68,
+    "height": 153,
+    "weight": 41,
     "status": "Deceased",
     "talent": "Intellectual",
-    "likes": [
-      "📚",
-      "🐕"
-    ],
-    "dislikes": [
-      "🎬"
-    ],
+    "likes": [],
+    "dislikes": [],
     "appearance": "DR3",
     "appearanceLabel": "Danganronpa 3",
     "series": "main",
@@ -1591,10 +1584,11 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Creative",
     "likes": [
-      "🍩"
+      "Macarons",
+      "Scones"
     ],
     "dislikes": [
-      "🍩"
+      "Snack food"
     ],
     "appearance": "DR3",
     "appearanceLabel": "Danganronpa 3",
@@ -1616,10 +1610,12 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Creative",
     "likes": [
-      "📱"
+      "Anime",
+      "Manga",
+      "Games"
     ],
     "dislikes": [
-      "📱"
+      "Deadlines"
     ],
     "appearance": "DR3",
     "appearanceLabel": "Danganronpa 3",
@@ -1641,10 +1637,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Intellectual",
     "likes": [
-      "🏃"
+      "Mixing medicines"
     ],
     "dislikes": [
-      "🎧"
+      "Loud noises"
     ],
     "appearance": "DR3",
     "appearanceLabel": "Danganronpa 3",
@@ -1668,11 +1664,11 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Physical",
     "likes": [
-      "👧",
-      "🍩"
+      "Ruruka Ando",
+      "Sweets"
     ],
     "dislikes": [
-      "📚"
+      "Rust"
     ],
     "appearance": "DR3",
     "appearanceLabel": "Danganronpa 3",
@@ -1693,10 +1689,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Creative",
     "likes": [
-      "🍩"
+      "Avocados"
     ],
     "dislikes": [
-      "⛅"
+      "Humidity"
     ],
     "appearance": "V3",
     "appearanceLabel": "Danganronpa V3",
@@ -1717,10 +1713,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Intellectual",
     "likes": [
-      "🐕"
+      "Arthropods"
     ],
     "dislikes": [
-      "🍩"
+      "Bananas"
     ],
     "appearance": "V3",
     "appearanceLabel": "Danganronpa V3",
@@ -1741,10 +1737,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Creative",
     "likes": [
-      "🛏️"
+      "Small spaces"
     ],
     "dislikes": [
-      "⛅"
+      "The ocean"
     ],
     "appearance": "V3",
     "appearanceLabel": "Danganronpa V3",
@@ -1767,10 +1763,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Inactive",
     "talent": "Special",
     "likes": [
-      "📚"
+      "100-240 volts"
     ],
     "dislikes": [
-      "🛏️"
+      "Vending machines"
     ],
     "appearance": "V3",
     "appearanceLabel": "Danganronpa V3",
@@ -1791,10 +1787,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Creative",
     "likes": [
-      "📚"
+      "Piano keys"
     ],
     "dislikes": [
-      "📚"
+      "Bicycles"
     ],
     "appearance": "V3",
     "appearanceLabel": "Danganronpa V3",
@@ -1815,10 +1811,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Intellectual",
     "likes": [
-      "🌿"
+      "House plants"
     ],
     "dislikes": [
-      "🎬"
+      "The occult"
     ],
     "appearance": "V3",
     "appearanceLabel": "Danganronpa V3",
@@ -1841,10 +1837,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Physical",
     "likes": [
-      "🏃"
+      "Cleaning"
     ],
     "dislikes": [
-      "🎬"
+      "Taking days off"
     ],
     "appearance": "V3",
     "appearanceLabel": "Danganronpa V3",
@@ -1865,10 +1861,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Intellectual",
     "likes": [
-      "🍩"
+      "Carbonated drinks"
     ],
     "dislikes": [
-      "🍽️"
+      "Pig feet"
     ],
     "appearance": "V3",
     "appearanceLabel": "Danganronpa V3",
@@ -1891,10 +1887,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Intellectual",
     "likes": [
-      "📚"
+      "Straw ropes"
     ],
     "dislikes": [
-      "🛏️"
+      "Air conditioning"
     ],
     "appearance": "V3",
     "appearanceLabel": "Danganronpa V3",
@@ -1917,10 +1913,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Intellectual",
     "likes": [
-      "🏃"
+      "Morning lake shores"
     ],
     "dislikes": [
-      "🏃"
+      "Winter lake shores"
     ],
     "appearance": "V3",
     "appearanceLabel": "Danganronpa V3",
@@ -1941,10 +1937,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Creative",
     "likes": [
-      "🎬"
+      "Children's television"
     ],
     "dislikes": [
-      "💻"
+      "Taking it easy"
     ],
     "appearance": "V3",
     "appearanceLabel": "Danganronpa V3",
@@ -1965,10 +1961,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Physical",
     "likes": [
-      "📱"
+      "Extraterritorial rights"
     ],
     "dislikes": [
-      "🛏️"
+      "Cars"
     ],
     "appearance": "V3",
     "appearanceLabel": "Danganronpa V3",
@@ -1989,10 +1985,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Physical",
     "likes": [
-      "🐕"
+      "Russian blues"
     ],
     "dislikes": [
-      "🐕"
+      "Whitetip reef sharks"
     ],
     "appearance": "V3",
     "appearanceLabel": "Danganronpa V3",
@@ -2013,10 +2009,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Alive",
     "talent": "Intellectual",
     "likes": [
-      "🎬"
+      "Novels"
     ],
     "dislikes": [
-      "📱"
+      "Gossip"
     ],
     "appearance": "V3",
     "appearanceLabel": "Danganronpa V3",
@@ -2039,10 +2035,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Physical",
     "likes": [
-      "📚"
+      "Nunchucks"
     ],
     "dislikes": [
-      "👦"
+      "Men"
     ],
     "appearance": "V3",
     "appearanceLabel": "Danganronpa V3",
@@ -2064,10 +2060,10 @@ window.DANGANDLE_CHARACTERS = [
     "status": "Deceased",
     "talent": "Creative",
     "likes": [
-      "📚"
+      "EVA foam"
     ],
     "dislikes": [
-      "📱"
+      "Disorderly queues"
     ],
     "appearance": "V3",
     "appearanceLabel": "Danganronpa V3",

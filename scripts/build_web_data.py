@@ -1,15 +1,15 @@
 """Build the static web game dataset from resources/characters.csv.
 
 Outputs:
-  * web/js/characters.js   -> window.DANGANDLE_CHARACTERS = [...] (used by the site)
-  * web/images/<id>.webp  -> portrait of every character, named after its id
+  * docs/js/characters.js   -> window.DANGANDLE_CHARACTERS = [...] (used by the site)
+  * docs/images/<id>.webp  -> portrait of every character, named after its id
   * resources/image-mapping.csv -> id / name / original file name (so the rename
     is reversible and auditable)
 
 Usage:
     python scripts/build_web_data.py
 
-The script is idempotent: once the portraits have been moved to web/images it
+The script is idempotent: once the portraits have been moved to docs/images it
 re-uses them instead of looking for the original file names again.
 """
 
@@ -29,7 +29,7 @@ if hasattr(sys.stdout, "reconfigure"):
 ROOT = Path(__file__).resolve().parents[1]
 CSV_PATH = ROOT / "resources" / "characters.csv"
 IMG_DIR = ROOT / "resources" / "image"
-WEB_DIR = ROOT / "web"
+WEB_DIR = ROOT / "docs"
 OUT_IMG_DIR = WEB_DIR / "images"
 OUT_JS = WEB_DIR / "js" / "characters.js"
 MAPPING_CSV = ROOT / "resources" / "image-mapping.csv"
@@ -77,14 +77,14 @@ EXTRA_CHARACTERS = [
     {
         "Name": "Miaya Gekkogahara",
         "Aliases": "",
-        "Title": "Ultimate Anthropologist",
+        "Title": "Ultimate Therapist",
         "Gender": "Male",
-        "Height": "173",
-        "Weight": "68",
+        "Height": "153",
+        "Weight": "41",
         "Status": "Deceased",
         "Talent Category": "Intellectual",
-        "Likes": "📚, 🐕",
-        "Dislikes": "🎬",
+        "Likes": "",
+        "Dislikes": "",
         "First Appearance": "Danganronpa 3: The End of Hope's Peak High School",
         "Image": "Miaya_Gekkogahara_DR3_VA_ID.webp",
     },
@@ -97,8 +97,8 @@ EXTRA_CHARACTERS = [
         "Weight": "Unknown",
         "Status": "Inactive",
         "Talent Category": "NAN",
-        "Likes": "📚",
-        "Dislikes": "🎧",
+        "Likes": "",
+        "Dislikes": "",
         "First Appearance": "Danganronpa Another Episode: Ultra Despair Girls",
         "Image": "Monodam_VA_ID.webp",
     },
@@ -111,8 +111,8 @@ EXTRA_CHARACTERS = [
         "Weight": "Unknown",
         "Status": "Inactive",
         "Talent Category": "Special",
-        "Likes": "💻",
-        "Dislikes": "📱",
+        "Likes": "",
+        "Dislikes": "",
         "First Appearance": "Danganronpa 2: Goodbye Despair",
         "Image": "Monokid_VA_ID.webp",
     },
@@ -125,8 +125,8 @@ EXTRA_CHARACTERS = [
         "Weight": "Unknown",
         "Status": "Inactive",
         "Talent Category": "Special",
-        "Likes": "💻",
-        "Dislikes": "🎬",
+        "Likes": "",
+        "Dislikes": "",
         "First Appearance": "Danganronpa 2: Goodbye Despair",
         "Image": "Monophanie_VA_ID.webp",
     },
@@ -139,8 +139,8 @@ EXTRA_CHARACTERS = [
         "Weight": "Unknown",
         "Status": "Inactive",
         "Talent Category": "Special",
-        "Likes": "💻",
-        "Dislikes": "🎱",
+        "Likes": "",
+        "Dislikes": "",
         "First Appearance": "Danganronpa 1: Trigger Happy Havoc",
         "Image": "Monosuke_VA_ID.webp",
     },
@@ -153,8 +153,8 @@ EXTRA_CHARACTERS = [
         "Weight": "Unknown",
         "Status": "Inactive",
         "Talent Category": "Special",
-        "Likes": "🍩",
-        "Dislikes": "💻",
+        "Likes": "",
+        "Dislikes": "",
         "First Appearance": "Danganronpa 2: Goodbye Despair",
         "Image": "Monotaro_VA_ID.webp",
     },
@@ -437,7 +437,7 @@ def copy_images(dataset: list[dict], portraits: list[tuple[str, Path]]) -> None:
                     "id": character["id"],
                     "name": character["name"],
                     "original_file": source_name,
-                    "new_file": f"web/{target_path.as_posix()}",
+                    "new_file": target_path.relative_to(ROOT).as_posix(),
                     "variant": suffix.lstrip("_") or "primary",
                 }
             )

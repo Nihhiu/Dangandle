@@ -9,7 +9,7 @@ from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1] / "web"
+ROOT = Path(__file__).resolve().parents[1] / "docs"
 
 
 class NoCacheHandler(SimpleHTTPRequestHandler):
