@@ -327,7 +327,7 @@ def collect_portraits() -> list[tuple[str, Path]]:
     """Return every portrait as (file name, path).
 
     On the first run the portraits live in resources/image. After a run they
-    have been renamed to web/images/<id>.webp, so the mapping CSV is used to
+    have been renamed to docs/images/<id>.webp, so the mapping CSV is used to
     find them again. This keeps the script re-runnable.
     """
     portraits: list[tuple[str, Path]] = []
@@ -414,7 +414,7 @@ def match_images(dataset: list[dict], portraits: list[tuple[str, Path]]) -> None
 
 
 def copy_images(dataset: list[dict], portraits: list[tuple[str, Path]]) -> None:
-    """Move/rename the portraits to web/images/<id>.webp."""
+    """Move/rename the portraits to docs/images/<id>.webp."""
     OUT_IMG_DIR.mkdir(parents=True, exist_ok=True)
     paths = dict(portraits)
     mapping = []
@@ -458,7 +458,7 @@ def copy_images(dataset: list[dict], portraits: list[tuple[str, Path]]) -> None:
         writer.writeheader()
         writer.writerows(sorted(mapping, key=lambda r: (r["id"], r["variant"])))
 
-    # the portraits now live in web/images, the source folder is emptied
+    # the portraits now live in docs/images, the source folder is emptied
     for name, path in portraits:
         if path.parent == IMG_DIR and path.exists():
             path.unlink()
@@ -486,7 +486,7 @@ def main() -> None:
     pool = [c for c in dataset if c["pool"]]
     missing = [c["name"] for c in dataset if not c.get("image")]
     print(f"characters : {len(dataset)} ({len(pool)} in the daily pool)")
-    print(f"portraits  : {len(list(OUT_IMG_DIR.glob('*.webp')))} in web/images")
+    print(f"portraits  : {len(list(OUT_IMG_DIR.glob('*.webp')))} in docs/images")
     if missing:
         print(f"no portrait: {', '.join(missing)}")
     print(f"dataset    : {OUT_JS.relative_to(ROOT)}")
