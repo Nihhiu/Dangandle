@@ -4,30 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dangandle — Daily Danganronpa Wordle</title>
-<meta name="description" content="A daily deduction puzzle: guess the hidden Danganronpa character from attribute clues. Green, yellow and red tells narrow down the candidates.">
+<meta name="description" content="A daily deduction puzzle: guess the hidden Danganronpa character from attribute clues. Every clue narrows down the candidates.">
 <meta name="color-scheme" content="dark">
 <meta property="og:title" content="Dangandle — Daily Danganronpa Wordle">
 <meta property="og:description" content="Guess the hidden Danganronpa character. 10 attempts, one new puzzle every day.">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="Dangandle%20icon.ico" sizes="any">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="backdrop" aria-hidden="true"></div>
 
 <header class="topbar">
-  <div class="brand">
-    <img class="brand-mark" src="favicon.svg" alt="" width="34" height="34">
-    <div>
-      <h1>DANGANDLE</h1>
-      <p class="tagline">A daily Danganronpa deduction puzzle</p>
-    </div>
-  </div>
-
-  <nav class="modes" aria-label="Game mode">
-    <button type="button" class="mode-btn is-active" data-mode="daily">Daily</button>
-    <button type="button" class="mode-btn" data-mode="random">Random</button>
-  </nav>
-
   <div class="topbar-actions">
     <button type="button" class="ghost-btn" id="stats-btn">Stats</button>
     <button type="button" class="ghost-btn" id="help-btn">How to play</button>
@@ -39,21 +26,13 @@
     <div class="puzzle-info">
       <div>
         <span class="puzzle-label">Puzzle</span>
-        <span class="puzzle-value" id="puzzle-number">#000</span>
-      </div>
-      <div>
-        <span class="puzzle-label">Date</span>
         <span class="puzzle-value" id="puzzle-date">—</span>
       </div>
       <div>
         <span class="puzzle-label">Attempts</span>
-        <span class="puzzle-value" id="attempts-left">10 / 10</span>
+        <span class="puzzle-value" id="attempts-left">0 / 10</span>
       </div>
     </div>
-
-    <div class="slots" id="slots" aria-label="Attempt slots"></div>
-
-    <div class="guesses" id="guesses" aria-live="polite"></div>
 
     <form class="guess-form" id="guess-form" autocomplete="off">
       <div class="input-wrap">
@@ -65,34 +44,26 @@
 
     <div class="underbar">
       <span class="candidates" id="candidates">— candidates left</span>
-      <div class="underbar-actions">
-        <button type="button" class="ghost-btn small" id="giveup-btn">Give up</button>
+      <button type="button" class="ghost-btn small" id="giveup-btn">Give up</button>
+    </div>
+
+    <div class="table-scroll">
+      <div class="table-head" aria-hidden="true">
+        <span></span>
+        <span>Name</span>
+        <span>Title</span>
+        <span>Gender</span>
+        <span>Height</span>
+        <span>Weight</span>
+        <span>Status</span>
+        <span>Talent type</span>
+        <span>Likes</span>
+        <span>Dislikes</span>
+        <span>Debut</span>
       </div>
+      <div class="guesses" id="guesses" aria-live="polite"></div>
     </div>
   </section>
-
-  <aside class="sidebar">
-    <div class="panel">
-      <h2>Clues</h2>
-      <p class="panel-text">Every guess is compared with the secret character attribute by attribute.</p>
-      <ul class="legend">
-        <li><span class="swatch exact"></span><strong>Exact</strong> — the attribute matches the secret.</li>
-        <li><span class="swatch close"></span><strong>Partial</strong> — close, but not identical (same series, same role word, near value…).</li>
-        <li><span class="swatch none"></span><strong>None</strong> — the attribute has nothing in common.</li>
-        <li><span class="swatch unknown"></span><strong>Unknown</strong> — the secret has no data for that attribute.</li>
-      </ul>
-    </div>
-
-    <div class="panel">
-      <h2>Attributes</h2>
-      <ul class="attr-list" id="attr-list"></ul>
-    </div>
-
-    <div class="panel">
-      <h2>Emoji key</h2>
-      <ul class="emoji-key" id="emoji-key"></ul>
-    </div>
-  </aside>
 </main>
 
 <!-- Result modal -->
@@ -110,7 +81,7 @@
     <table class="result-table" id="result-table"></table>
     <div class="modal-actions">
       <button type="button" class="primary-btn" id="share-btn">Copy result</button>
-      <button type="button" class="ghost-btn" id="new-game-btn">New random game</button>
+      <button type="button" class="ghost-btn" id="result-dismiss">Close</button>
     </div>
     <p class="share-hint" id="share-hint" role="status"></p>
   </div>
@@ -136,13 +107,23 @@
     <ol class="help-list">
       <li>One character is hidden. <strong>You have 10 attempts</strong> to name them.</li>
       <li>Type a name and pick a suggestion (aliases like <em>Keebo</em> or <em>Celeste</em> work too).</li>
-      <li>Each guess is compared with the secret on nine attributes: title, gender, height, weight, status, talent, likes, dislikes and debut game.</li>
-      <li><span class="swatch exact"></span> means the attribute matches exactly, <span class="swatch close"></span> means it is partially right, <span class="swatch none"></span> means it is wrong.</li>
-      <li>Numbers also point up or down: your height was too low or too high.</li>
-      <li>The counter shows how many characters are still consistent with every clue you have seen.</li>
+      <li>Every guess is compared with the secret on nine attributes: title, gender, height, weight, status, talent type, likes, dislikes and debut game.</li>
       <li>A new puzzle is generated every day from the date as a seed — everybody plays the same character on the same day.</li>
+      <li>The counter shows how many characters are still consistent with every clue you have seen.</li>
+      <li>Progress and statistics are stored in this browser only.</li>
     </ol>
-    <p class="help-note">Progress and statistics are stored in this browser only.</p>
+
+    <h3>Clues</h3>
+    <ul class="legend">
+      <li><span class="swatch exact"></span><strong>Exact</strong> — the attribute matches the secret.</li>
+      <li><span class="swatch close"></span><strong>Partial</strong> — close, but not identical (same series, same role word, near value…).</li>
+      <li><span class="swatch none"></span><strong>None</strong> — the attribute has nothing in common.</li>
+      <li><span class="swatch unknown"></span><strong>Unknown</strong> — the secret has no data for that attribute.</li>
+      <li><span class="swatch arrow">↑↓</span><strong>Arrows</strong> — the secret is taller / shorter or heavier / lighter than your guess.</li>
+    </ul>
+
+    <h3>Emoji key</h3>
+    <ul class="emoji-key" id="emoji-key"></ul>
   </div>
 </div>
 

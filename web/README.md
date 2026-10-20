@@ -7,11 +7,11 @@ attribute.
 ```
 web/
 ├── index.html          # the whole UI
-├── css/style.css       # theme
+├── css/style.css       # monochrome (black / white / grey) theme
 ├── js/game.js          # game logic (seeding, comparison, candidates, stats)
 ├── js/characters.js    # generated dataset — do not edit by hand
 ├── images/<id>.webp    # one portrait per character, named after its id
-├── favicon.svg
+├── Dangandle icon.ico  # page icon
 └── .nojekyll           # makes GitHub Pages serve the folder as-is
 ```
 
@@ -22,14 +22,17 @@ web/
   local date; `?d=2026-01-31` opens an archived puzzle.
 * **Ten attempts**, then the secret is revealed.
 * **Nine attributes** are compared on every guess: title, gender, height, weight,
-  status, talent, likes, dislikes and debut game.
+  status, talent type, likes, dislikes and debut game.
+* Every guess is a single row —
+  `image | name | title | gender | height | weight | status | talent type | likes | dislikes | debut`
+  — and the newest row sits on top.
 
 | Clue | Meaning |
 | --- | --- |
-| 🟩 green | the attribute is exactly right |
-| 🟨 yellow | partial — same role word, same series, or a number very close to the secret |
-| 🟥 red | nothing in common |
-| ⬜ grey | the secret has no data for that attribute |
+| white cell | the attribute is exactly right |
+| mid grey cell | partial — same role word, same series, or a number very close to the secret |
+| dark grey cell | nothing in common |
+| black cell | the secret has no data for that attribute |
 | ↑ ↓ | the secret is taller / shorter, heavier / lighter than your guess |
 
 * **Candidate counter** — after every guess the game filters the whole cast with the

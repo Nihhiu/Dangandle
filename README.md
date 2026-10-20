@@ -50,18 +50,19 @@ python scripts/serve_web.py        # http://127.0.0.1:8765/
 
 * The date (`YYYY-MM-DD`) is hashed into a seed, so **everybody plays the same
   character on the same day** — a new puzzle is generated every midnight.
-* You have **10 attempts**. Each guess is compared with the secret on nine
-  attributes: title, gender, height, weight, status, talent, likes, dislikes and
-  debut game.
-  * 🟩 **green** — exact match
-  * 🟨 **yellow** — partial match (same role word, same game series, a number close
+* You have **10 attempts**. Every guess is written as a single row:
+  `image | name | title | gender | height | weight | status | talent type | likes | dislikes | debut`.
+  The newest row is always on top.
+* Each of the nine clue cells is shaded on a black-to-white scale:
+  * **white** — exact match
+  * **mid grey** — partial match (same role word, same game series, a number close
     to the secret…)
-  * 🟥 **red** — nothing in common
-  * ⬜ **grey** — the secret has no data for that attribute
-  * ↑ ↓ — the secret is taller/shorter or heavier/lighter than your guess
+  * **dark grey** — nothing in common
+  * **black** — the secret has no data for that attribute
+  * **↑ ↓** — the secret is taller/shorter or heavier/lighter than your guess
 * A live **candidate counter** shows how many characters are still consistent with
   every clue you have seen.
-* `?d=2026-01-31` opens an archived puzzle; `?m=random` starts a random game.
+* `?d=2026-01-31` opens an archived puzzle.
 * Progress and statistics are stored in the browser (`localStorage`).
 
 Full details: [`web/README.md`](web/README.md).

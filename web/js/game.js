@@ -50,7 +50,6 @@
       .replace(/[^a-z0-9]+/g, " ")
       .trim();
   }
-  function clamp(value, min, max) { return Math.max(min, Math.min(max, value)); }
 
   function todayKey() {
     var d = new Date();
@@ -96,9 +95,6 @@
     var rnd = mulberry32(hashString("dangandle:" + dateKey));
     return POOL[Math.floor(rnd() * POOL.length)];
   }
-  function randomTarget() {
-    return POOL[Math.floor(Math.random() * POOL.length)];
-  }
 
   /* ------------------------------------------------------------ comparison */
 
@@ -114,7 +110,6 @@
     });
     return tokens;
   }
-  function tokenKeys(tokens) { return Object.keys(tokens); }
   function intersects(a, b) {
     for (var key in a) { if (b[key]) return true; }
     return false;
@@ -162,7 +157,9 @@
         if (!t.length) return { state: "unknown" };
         if (sameSet(g, t)) return { state: "exact" };
         for (i = 0; i < g.length; i++) {
-          if (t.indexOf(g[i]) !== -1) return { state: "close", hits: t.filter(function (x) { return g.indexOf(x) !== -1; }) };
+          if (t.indexOf(g[i]) !== -1) {
+            return { state: "close", hits: t.filter(function (x) { return g.indexOf(x) !== -1; }) };
+          }
         }
         return { state: "none" };
 
@@ -244,7 +241,6 @@
   /* ------------------------------------------------------------------ state */
 
   var state = {
-    mode: "daily",
     dateKey: todayKey(),
     target: null,
     guesses: [],
@@ -263,44 +259,33 @@
     try { raw = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch (e) { raw = null; }
     var params = new URLSearchParams(window.location.search);
     var requested = params.get("d");
-    var mode = (params.get("m") === "random") ? "random" : "daily";
-    if (mode === "daily" && requested && parseDateKey(requested)) mode = "daily";
 
-    if (raw && raw.mode === mode) {
-      var sameDay = mode === "daily" ? raw.dateKey === todayKey() : true;
-      if (sameDay && raw.dateKey && (!requested || raw.dateKey === requested)) {
-        var target = characterById(raw.targetId);
-        if (target) {
-          state.mode = mode;
-          state.dateKey = raw.dateKey;
-          state.target = target;
-          state.guesses = (raw.guessIds || []).map(characterById).filter(Boolean);
-          state.status = raw.status || "playing";
-          return;
-        }
+    if (raw && raw.dateKey && (!requested || raw.dateKey === requested)) {
+      var sameDay = raw.dateKey === todayKey();
+      if (!sameDay && requested) sameDay = true; /* archived puzzle */
+      var target = characterById(raw.targetId);
+      if (target && sameDay) {
+        state.dateKey = raw.dateKey;
+        state.target = target;
+        state.guesses = (raw.guessIds || []).map(characterById).filter(Boolean);
+        state.status = raw.status || "playing";
+        return;
       }
     }
-    startNewGame(mode, requested);
+    startNewGame(requested);
   }
 
-  function startNewGame(mode, dateKey) {
-    state.mode = mode;
+  function startNewGame(dateKey) {
     state.guesses = [];
     state.status = "playing";
-    if (mode === "random") {
-      state.dateKey = todayKey();
-      state.target = randomTarget();
-    } else {
-      state.dateKey = dateKey && parseDateKey(dateKey) ? dateKey : todayKey();
-      state.target = dailyTarget(state.dateKey);
-    }
+    state.dateKey = dateKey && parseDateKey(dateKey) ? dateKey : todayKey();
+    state.target = dailyTarget(state.dateKey);
     saveState();
   }
 
   function saveState() {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
-        mode: state.mode,
         dateKey: state.dateKey,
         targetId: state.target ? state.target.id : null,
         guessIds: state.guesses.map(function (g) { return g.id; }),
@@ -363,98 +348,60 @@
       case "text": return (value || []).join(", ");
       case "number": return value === null || value === undefined ? "Unknown" : value + " " + attr.unit;
       case "set": return (value || []).length ? value.join(" ") : "Unknown";
-      case "game": return value + " · " + character.appearanceLabel;
+      case "game": return value;
       default:
         if (attr.key === "talent" && value === "NAN") return "Unassigned";
         return value || "Unknown";
     }
   }
 
-  function buildTile(attr, guess, target, fb) {
-    var tile = el("div", "tile state-" + fb.state);
-    tile.appendChild(el("span", "t-label", attr.label));
-
-    var row = el("div", "t-value");
-    if (attr.type === "set") {
-      var items = guess[attr.key] || [];
-      if (!items.length) {
-        row.appendChild(el("span", null, "Unknown"));
-      } else {
-        items.forEach(function (item) {
-          var chip = el("span", "emo", item);
-          if (fb.hits && fb.hits.indexOf(item) !== -1) chip.classList.add("hit");
-          row.appendChild(chip);
-        });
-      }
-    } else {
-      row.appendChild(el("span", null, displayValue(attr, guess)));
-    }
-
-    if (fb.hint) row.appendChild(el("span", "t-hint", fb.hint));
-    tile.appendChild(row);
-
-    var secret = displayValue(attr, target);
-    tile.title = "Secret: " + secret + (fb.hint === "↑" ? " (higher than your guess)" : fb.hint === "↓" ? " (lower than your guess)" : "");
-    return tile;
-  }
-
-  function buildGuessCard(guess, index) {
-    var isWin = guess.id === state.target.id;
-    var card = el("div", "guess" + (isWin ? " is-win" : ""));
-
-    var head = el("div", "guess-head");
-    head.appendChild(portrait(guess));
-    var who = el("div", "who");
-    who.appendChild(el("strong", null, guess.name));
-    who.appendChild(el("small", null, (guess.title || []).join(" · ") || "—"));
-    head.appendChild(who);
-    head.appendChild(el("span", "guess-tag", "#" + (index + 1)));
-    card.appendChild(head);
-
+  function buildGuessRow(guess) {
+    var row = el("div", "guess" + (guess.id === state.target.id ? " is-win" : ""));
     var fb = compare(guess, state.target);
-    var tiles = el("div", "tiles");
-    ATTRS.forEach(function (attr) {
-      tiles.appendChild(buildTile(attr, guess, state.target, fb[attr.key]));
-    });
-    card.appendChild(tiles);
-    return card;
-  }
 
-  function renderSlots() {
-    var box = $("#slots");
-    box.innerHTML = "";
-    for (var i = 0; i < MAX_ATTEMPTS; i++) {
-      var slot = el("div", "slot");
-      if (i < state.guesses.length) {
-        slot.classList.add("is-used");
-        slot.appendChild(portrait(state.guesses[i]));
+    var pic = el("div", "guess-cell pic");
+    pic.appendChild(portrait(guess));
+    row.appendChild(pic);
+
+    var name = el("div", "guess-cell name");
+    name.appendChild(el("span", null, guess.name));
+    row.appendChild(name);
+
+    ATTRS.forEach(function (attr) {
+      var cell = el("div", "guess-cell clue-" + fb[attr.key].state + (attr.type === "text" ? " title" : ""));
+      if (attr.type === "set") {
+        var items = guess[attr.key] || [];
+        if (!items.length) {
+          cell.appendChild(el("span", null, "Unknown"));
+        } else {
+          items.forEach(function (item) {
+            var chip = el("span", "emo", item);
+            if (fb[attr.key].hits && fb[attr.key].hits.indexOf(item) !== -1) chip.classList.add("hit");
+            cell.appendChild(chip);
+          });
+        }
       } else {
-        slot.appendChild(el("span", null, "?"));
+        cell.appendChild(el("span", null, displayValue(attr, guess)));
       }
-      if (state.status !== "playing" && i === MAX_ATTEMPTS - 1) {
-        slot.classList.add("is-target");
-        slot.innerHTML = "";
-        slot.appendChild(portrait(state.target));
-      }
-      box.appendChild(slot);
-    }
+      if (fb[attr.key].hint) cell.appendChild(el("span", "hint", fb[attr.key].hint));
+      row.appendChild(cell);
+    });
+
+    return row;
   }
 
   function renderGuesses() {
     var box = $("#guesses");
     box.innerHTML = "";
-    state.guesses.forEach(function (guess, i) {
-      box.appendChild(buildGuessCard(guess, i));
+    /* newest guess first */
+    state.guesses.slice().reverse().forEach(function (guess) {
+      box.appendChild(buildGuessRow(guess));
     });
   }
 
   function renderInfo() {
-    $("#puzzle-number").textContent = "#" + puzzleNumber(state.dateKey);
-    $("#puzzle-date").textContent = state.mode === "random" ? "Random run" : formatDate(state.dateKey);
+    $("#puzzle-date").textContent = formatDate(state.dateKey);
     $("#attempts-left").textContent = state.guesses.length + " / " + MAX_ATTEMPTS;
-    document.querySelectorAll(".mode-btn").forEach(function (btn) {
-      btn.classList.toggle("is-active", btn.dataset.mode === state.mode);
-    });
   }
 
   function renderCandidates() {
@@ -471,7 +418,6 @@
 
   function render() {
     renderInfo();
-    renderSlots();
     renderGuesses();
     renderCandidates();
     var over = state.status !== "playing";
@@ -499,12 +445,12 @@
 
   function showResult() {
     var won = state.status === "won";
-    var modal = $("#result-modal");
     var target = state.target;
 
     $("#result-kicker").textContent = won ? "Case closed — correct!" : "Case closed — you ran out of attempts";
     $("#result-title").textContent = target.name;
     $("#result-sub").textContent = (target.title || []).join(" · ") + " · " + target.appearanceLabel;
+
     var portraitNode = $("#result-portrait");
     var fresh = portrait(target, "result-portrait");
     if (portraitNode.parentNode) portraitNode.parentNode.replaceChild(fresh, portraitNode);
@@ -515,7 +461,7 @@
       var row = el("tr");
       row.appendChild(el("td", null, attr.label));
       var valueCell = el("td", "value");
-      valueCell.textContent = displayValue(attr, target);
+      valueCell.textContent = attr.type === "game" ? target.appearanceLabel : displayValue(attr, target);
       row.appendChild(valueCell);
       table.appendChild(row);
     });
@@ -764,16 +710,6 @@
       if (!event.target.closest(".input-wrap")) hideSuggestions();
     });
 
-    document.querySelectorAll(".mode-btn").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var mode = btn.dataset.mode;
-        if (mode === state.mode) return;
-        startNewGame(mode);
-        render();
-        if (mode === "random") toast("New random character — good luck!");
-      });
-    });
-
     $("#giveup-btn").addEventListener("click", function () {
       if (state.status !== "playing") return;
       if (!window.confirm("Reveal the secret character? This counts as a loss.")) return;
@@ -785,11 +721,7 @@
     });
 
     $("#share-btn").addEventListener("click", copyShare);
-    $("#new-game-btn").addEventListener("click", function () {
-      closeModal("#result-modal");
-      startNewGame("random");
-      render();
-    });
+    $("#result-dismiss").addEventListener("click", function () { closeModal("#result-modal"); });
     $("#result-close").addEventListener("click", function () { closeModal("#result-modal"); });
 
     $("#stats-btn").addEventListener("click", function () { renderStats(); openModal("#stats-modal"); });
@@ -809,28 +741,9 @@
     });
   }
 
-  function buildSidebar() {
-    var attrList = $("#attr-list");
-    attrList.innerHTML = "";
-    var descriptions = {
-      title: "Exact match, or partial when the role word overlaps.",
-      gender: "Male, female or none.",
-      height: "Centimetres. Yellow when close, arrows show the way.",
-      weight: "Kilograms. Yellow when close, arrows show the way.",
-      status: "Alive, deceased or inactive.",
-      talent: "Intellectual, physical, creative, special…",
-      likes: "Emoji categories the character enjoys.",
-      dislikes: "Emoji categories the character hates.",
-      appearance: "First game. Yellow when it is the same series."
-    };
-    ATTRS.forEach(function (attr) {
-      var item = el("li");
-      item.appendChild(el("b", null, attr.label));
-      item.appendChild(el("span", null, descriptions[attr.key]));
-      attrList.appendChild(item);
-    });
-
+  function buildEmojiKey() {
     var key = $("#emoji-key");
+    if (!key) return;
     key.innerHTML = "";
     EMOJI_KEY.forEach(function (pair) {
       var item = el("li");
@@ -842,7 +755,7 @@
 
   /* -------------------------------------------------------------------- init */
 
-  buildSidebar();
+  buildEmojiKey();
   bind();
   loadState();
   render();
