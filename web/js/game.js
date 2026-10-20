@@ -451,9 +451,11 @@
     $("#result-title").textContent = target.name;
     $("#result-sub").textContent = (target.title || []).join(" · ") + " · " + target.appearanceLabel;
 
-    var portraitNode = $("#result-portrait");
-    var fresh = portrait(target, "result-portrait");
-    if (portraitNode.parentNode) portraitNode.parentNode.replaceChild(fresh, portraitNode);
+    var box = document.getElementById("result-portrait-box");
+    if (box) {
+      box.innerHTML = "";
+      box.appendChild(portrait(target, "result-portrait"));
+    }
 
     var table = $("#result-table");
     table.innerHTML = "";

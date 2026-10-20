@@ -471,9 +471,15 @@ body {
   margin-bottom: 18px;
 }
 
-.result-portrait {
+.result-portrait-box {
   width: 104px;
   height: 104px;
+  flex: 0 0 auto;
+}
+
+.result-portrait {
+  width: 100%;
+  height: 100%;
   border-radius: 12px;
   object-fit: cover;
   background: #000;
