@@ -389,19 +389,41 @@ body {
 .guess-cell.clue-unknown { background: var(--unknown-bg); color: var(--unknown-fg); }
 
 .guess-cell .emo {
-  padding: 2px 6px;
+  padding: 3px 7px;
   border-radius: 999px;
-  font-size: 0.72rem;
-  background: rgba(0, 0, 0, 0.14);
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
-  line-height: 1.4;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  background: rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  cursor: help;
+  filter: saturate(1.05);
 }
 
 .guess-cell .emo.hit {
-  background: rgba(0, 0, 0, 0.72);
-  color: #fff;
-  box-shadow: none;
+  background: rgba(0, 0, 0, 0.78);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.45);
+  filter: none;
 }
+
+/* hover tooltip with the text of the like / dislike */
+.tooltip {
+  position: fixed;
+  z-index: 60;
+  pointer-events: none;
+  background: #f4f4f4;
+  color: #0a0a0a;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  transform: translate(-50%, -100%);
+  animation: fade 0.12s ease both;
+}
+
+.tooltip[hidden] { display: none; }
 
 .portrait-fallback {
   width: 34px;

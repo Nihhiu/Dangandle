@@ -26,27 +26,210 @@
 
   /* Fan categories used for the characters that have no official profile. */
   var CATEGORY_KEY = [
-    ["Meals", "home cooking, restaurants, food in general"],
-    ["Snacks", "sweets, cakes, little bites"],
-    ["Sweets", "candy, chocolate, desserts"],
-    ["Bread", "bakery products"],
-    ["Social media", "phones, chats, networks"],
-    ["Computers", "gadgets, programming, the web"],
-    ["Entertainment", "films, series, games, shows"],
-    ["Music", "songs, concerts, sound"],
-    ["Sports", "training, running, competitions"],
-    ["Books", "reading, study, novels"],
-    ["Animals", "pets, wildlife"],
-    ["Plants", "flowers, gardens, greenery"],
-    ["Interiors", "rooms, furniture, decoration"],
-    ["Clothes", "fashion, outfits"],
-    ["Alcohol", "drinks, tobacco, party"],
-    ["Weather", "sun, rain, climate"],
-    ["Countries", "travel abroad, flags, cultures"],
-    ["Girls", "the company of girls"],
-    ["Boys", "the company of boys"],
-    ["Billiards", "pool, snooker, cues"]
+    ["Meals", "home cooking, restaurants, food in general", "🍽️"],
+    ["Snacks", "sweets, cakes, little bites", "🍪"],
+    ["Sweets", "candy, chocolate, desserts", "🍬"],
+    ["Bread", "bakery products", "🍞"],
+    ["Social media", "phones, chats, networks", "📱"],
+    ["Computers", "gadgets, programming, the web", "💻"],
+    ["Entertainment", "films, series, games, shows", "🎬"],
+    ["Music", "songs, concerts, sound", "🎵"],
+    ["Sports", "training, running, competitions", "🏅"],
+    ["Books", "reading, study, novels", "📚"],
+    ["Animals", "pets, wildlife", "🐾"],
+    ["Plants", "flowers, gardens, greenery", "🌿"],
+    ["Interiors", "rooms, furniture, decoration", "🛋️"],
+    ["Clothes", "fashion, outfits", "👕"],
+    ["Alcohol", "drinks, tobacco, party", "🍺"],
+    ["Weather", "sun, rain, climate", "⛅"],
+    ["Countries", "travel abroad, flags, cultures", "🗺️"],
+    ["Girls", "the company of girls", "👧"],
+    ["Boys", "the company of boys", "👦"],
+    ["Billiards", "pool, snooker, cues", "🎱"]
   ];
+
+  /* Every "like" and "dislike" is shown as an emoji; hovering the emoji
+     reveals the text of the official profile. The first matching rule wins. */
+  var EMOJI_RULES = [
+    [/100-240|volt/i, "🔌"],
+    [/four dark devas/i, "🐉"],
+    [/plebeian|commoner/i, "👥"],
+    [/byakuya/i, "🧑"],
+    [/ruruka/i, "🍰"],
+    [/monaca/i, "🐱"],
+    [/junk food/i, "🍔"],
+    [/sugar-free/i, "🚫"],
+    [/non-alcoholic/i, "🍺"],
+    [/freshly washed towel|laundry|washing machine/i, "🧺"],
+    [/bathroom/i, "🚽"],
+    [/dried bean curd/i, "🍙"],
+    [/dried mackerel/i, "🐟"],
+    [/goya|coriander|organic vegetable/i, "🥬"],
+    [/sour plum/i, "🍋"],
+    [/sour stuff|bitter/i, "😖"],
+    [/sakuramochi|kusamochi|sweet bean paste/i, "🍡"],
+    [/tamagoyaki|cooking|cooking/i, "🍳"],
+    [/fried dough|karinto/i, "🍘"],
+    [/chestnut/i, "🌰"],
+    [/peeled chestnut/i, "🌰"],
+    [/macaron|scone/i, "🍬"],
+    [/candy|sweet/i, "🍰"],
+    [/chocolate/i, "🍫"],
+    [/donut/i, "🍩"],
+    [/snack/i, "🍪"],
+    [/bread/i, "🍞"],
+    [/meal/i, "🍽️"],
+    [/curry/i, "🍛"],
+    [/coffee/i, "☕"],
+    [/coke|carbonated|soft drink/i, "🥤"],
+    [/whiskey|bourbon|alcohol|beer/i, "🥃"],
+    [/milk/i, "🥛"],
+    [/sour plums/i, "🫒"],
+    [/mackerel/i, "🐟"],
+    [/meat/i, "🍖"],
+    [/pig feet/i, "🐷"],
+    [/avocado/i, "🥑"],
+    [/banana/i, "🍌"],
+    [/apple/i, "🍎"],
+    [/french/i, "🥐"],
+    [/japan/i, "🗾"],
+    [/vending/i, "🥤"],
+    [/laptop|computer/i, "💻"],
+    [/social media|phone/i, "📱"],
+    [/anime/i, "🎌"],
+    [/manga/i, "📕"],
+    [/light novel/i, "📚"],
+    [/romance novel/i, "💘"],
+    [/girl'?s manga/i, "📕"],
+    [/novel|dictionary/i, "📖"],
+    [/entertainment|film|movie|show/i, "🎬"],
+    [/children'?s television/i, "📺"],
+    [/game|gaming/i, "🎮"],
+    [/music|sound/i, "🎵"],
+    [/piano key/i, "🎹"],
+    [/soccer|football/i, "⚽"],
+    [/vaulting/i, "🤸"],
+    [/track and field/i, "🏃"],
+    [/walking|traveling alone|taking walks/i, "🚶"],
+    [/sports|sparring|fighting|boxing/i, "🥊"],
+    [/german suplex/i, "🤼"],
+    [/nunchuck/i, "🥋"],
+    [/army knife|weapon/i, "⚔️"],
+    [/military/i, "🎖️"],
+    [/bicycle/i, "🚲"],
+    [/car/i, "🚗"],
+    [/book/i, "📚"],
+    [/cleaning|laundr/i, "🧹"],
+    [/medicine|pharmac|supplement/i, "💊"],
+    [/make-up|cosmetic/i, "💄"],
+    [/camera|hidden camera/i, "📷"],
+    [/gossip/i, "🗣️"],
+    [/lectures|discipline|conflict|chaos/i, "⚔️"],
+    [/calculation|math/i, "🧮"],
+    [/bad manner/i, "🙄"],
+    [/lazy/i, "🥱"],
+    [/ugly/i, "😖"],
+    [/beautiful|pretty/i, "💖"],
+    [/adorable|unadorable|regular cute/i, "💘"],
+    [/adorbs/i, "💖"],
+    [/cute/i, "🌸"],
+    [/quiet girl/i, "🤫"],
+    [/noisy/i, "🔊"],
+    [/loud noise/i, "🔊"],
+    [/young girl|old girl/i, "👧"],
+    [/girl/i, "👧"],
+    [/boy/i, "👦"],
+    [/man|men/i, "👨"],
+    [/mother|momma|mother in law/i, "👩"],
+    [/sister|daughter|child/i, "👶"],
+    [/himself/i, "🪞"],
+    [/verbal abuse/i, "🗯️"],
+    [/being hated/i, "💢"],
+    [/being liked/i, "💕"],
+    [/good vibe|dope thing/i, "✨"],
+    [/wack thing/i, "🃏"],
+    [/shit rhyme/i, "🗑️"],
+    [/whatever'?s trending|trendy/i, "👗"],
+    [/popular|whatever/i, "📈"],
+    [/deadline/i, "⏳"],
+    [/alarm clock/i, "⏰"],
+    [/cigarette|tobacco/i, "🚬"],
+    [/microwave/i, "🥘"],
+    [/junk/i, "🗑️"],
+    [/greasy/i, "🍟"],
+    [/fresh|warm/i, "🛁"],
+    [/cold/i, "🧊"],
+    [/occult/i, "🔮"],
+    [/extraterritorial/i, "🛡️"],
+    [/earthly life/i, "🌍"],
+    [/plant|flower|meadow/i, "🌿"],
+    [/house plant/i, "🪴"],
+    [/tree/i, "🌳"],
+    [/arthropod|insect/i, "🕷️"],
+    [/earthworm/i, "🪱"],
+    [/frog/i, "🐸"],
+    [/snake/i, "🐍"],
+    [/cockroach/i, "🪳"],
+    [/animal|pet/i, "🐾"],
+    [/russian blue|cat/i, "🐈"],
+    [/shark/i, "🦈"],
+    [/fish/i, "🐟"],
+    [/rice/i, "🍚"],
+    [/sushi/i, "🍣"],
+    [/straw rope/i, "🪢"],
+    [/needle/i, "🪡"],
+    [/eva foam|sponge/i, "🧽"],
+    [/air conditioning|winter|snow/i, "❄️"],
+    [/humidity|rain/i, "🌧️"],
+    [/lightning/i, "⚡"],
+    [/weather/i, "⛅"],
+    [/ocean|sea/i, "🌊"],
+    [/lake shore/i, "🌅"],
+    [/sun/i, "☀️"],
+    [/small space/i, "📦"],
+    [/oversized/i, "🐘"],
+    [/interior|room|furniture/i, "🛋️"],
+    [/clothes|suit|fashion/i, "👕"],
+    [/hat/i, "🎩"],
+    [/country|countries/i, "🗺️"],
+    [/billiard|pool/i, "🎱"],
+    [/disc|discipline/i, "📏"],
+    [/free period|free time|day off|taking it easy/i, "🕊️"],
+    [/alone time/i, "🧘"],
+    [/napping/i, "😴"],
+    [/boredom/i, "🥱"],
+    [/working hard/i, "💪"],
+    [/towel/i, "🧻"],
+    [/futon/i, "🛏️"],
+    [/bed|sleep/i, "🛏️"],
+    [/world peace/i, "🕊️"],
+    [/chaos/i, "🌪️"],
+    [/rust/i, "⚙️"],
+    [/disorderly|queue/i, "😵"],
+    [/shock|rush/i, "🌊"],
+    [/squish/i, "🧸"],
+    [/fashion/i, "👗"],
+    [/suit/i, "🧥"],
+    [/alarm/i, "⏰"],
+    [/egg/i, "🥚"],
+    [/ball/i, "⚽"],
+    [/army kni/i, "🔪"],
+    [/black/i, "⚫"],
+    [/calculating|calculation/i, "🧮"],
+    [/dictionar/i, "📕"],
+    [/hair braid/i, "💇"],
+    [/money/i, "💰"],
+    [/taking days off|day off|vacation/i, "🏖️"],
+    [/hug/i, "🤗"],
+    [/star/i, "⭐"]
+  ];
+
+  function emojiFor(text) {
+    for (var i = 0; i < EMOJI_RULES.length; i++) {
+      if (EMOJI_RULES[i][0].test(text)) return EMOJI_RULES[i][1];
+    }
+    return "🔹";
+  }
 
   /* ------------------------------------------------------------------ utils */
 
@@ -390,8 +573,11 @@
         if (!items.length) {
           cell.appendChild(el("span", null, "—"));
         } else {
+          cell.title = items.join(" · ");
           items.forEach(function (item) {
-            var chip = el("span", "emo", item);
+            var chip = el("span", "emo", emojiFor(item));
+            chip.title = item;
+            chip.setAttribute("aria-label", item);
             if (fb[attr.key].hits && fb[attr.key].hits.indexOf(item) !== -1) chip.classList.add("hit");
             cell.appendChild(chip);
           });
@@ -699,6 +885,33 @@
     items[activeSuggestion].scrollIntoView({ block: "nearest" });
   }
 
+  /* ------------------------------------------------------- hover tooltips
+     Every like / dislike is drawn as an emoji; the tooltip spells the text. */
+
+  function initTooltips() {
+    var tip = document.createElement("div");
+    tip.className = "tooltip";
+    tip.hidden = true;
+    document.body.appendChild(tip);
+
+    document.addEventListener("mouseover", function (event) {
+      var chip = event.target.closest ? event.target.closest(".emo") : null;
+      if (!chip || !chip.title) { tip.hidden = true; return; }
+      var rect = chip.getBoundingClientRect();
+      tip.textContent = chip.title;
+      tip.hidden = false;
+      tip.style.left = Math.round(rect.left + rect.width / 2) + "px";
+      tip.style.top = Math.round(rect.top - 8) + "px";
+    });
+
+    document.addEventListener("mouseout", function (event) {
+      var chip = event.target.closest ? event.target.closest(".emo") : null;
+      if (chip) tip.hidden = true;
+    });
+
+    document.addEventListener("scroll", function () { tip.hidden = true; }, true);
+  }
+
   /* ------------------------------------------------------------------- wiring */
 
   function bind() {
@@ -771,7 +984,7 @@
     key.innerHTML = "";
     CATEGORY_KEY.forEach(function (pair) {
       var item = el("li");
-      item.appendChild(el("b", null, pair[0]));
+      item.appendChild(el("b", null, pair[2] + " " + pair[0]));
       item.appendChild(el("span", null, pair[1]));
       key.appendChild(item);
     });
@@ -780,6 +993,7 @@
   /* -------------------------------------------------------------------- init */
 
   buildEmojiKey();
+  initTooltips();
   bind();
   loadState();
   render();

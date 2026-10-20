@@ -38,8 +38,9 @@ docs/
 * **Likes and dislikes** are the official profiles from the
   [Danganronpa Wiki](https://danganronpa.fandom.com/wiki/Game_Characters) — *Curry,
   Trendy things* for Makoto, *Hair braids* for Kyoko, *Freshly washed towels* for
-  Nekomaru. Characters without an official profile use the fan categories that are
-  listed in *How to play*.
+  Nekomaru. Every entry is drawn as an emoji and **hovering it reveals the text**.
+  Characters without an official profile use the fan categories that are listed in
+  *How to play*.
 * **Candidate counter** — after every guess the game filters the whole cast with the
   clues seen so far and shows how many characters are still possible.
 * **Progress** (guesses, statistics, streaks) is stored in `localStorage`.

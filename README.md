@@ -64,8 +64,9 @@ python scripts/serve_web.py        # http://127.0.0.1:8765/
 * The **likes** and **dislikes** are the ones written on the official profile of
   each character on the [Danganronpa Wiki](https://danganronpa.fandom.com/wiki/Game_Characters)
   (curry and trendy things for Makoto, hair braids for Kyoko, fresh towels for
-  Nekomaru…). Characters without an official profile use the fan categories
-  listed in *How to play*.
+  Nekomaru…). Each one is drawn as an emoji and **hovering it shows the text**.
+  Characters without an official profile use the fan categories listed in
+  *How to play*.
 * A live **candidate counter** shows how many characters are still consistent with
   every clue you have seen.
 * `?d=2026-01-31` opens an archived puzzle.
