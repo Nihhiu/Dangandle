@@ -11,42 +11,6 @@ There are **two versions** in this repository:
 
 ---
 
-## 🌐 Play it online (GitHub Pages)
-
-The web game lives in the [`docs/`](docs/) folder and has no build step — it is plain
-HTML, CSS and JavaScript, so GitHub Pages can serve it as-is.
-
-### 1. Publish the site
-
-1. Make sure everything is pushed to GitHub:
-
-   ```bash
-   git add .
-   git commit -m "Add Dangandle web game"
-   git push origin main
-   ```
-
-2. On GitHub, open the repository → **Settings → Pages**.
-3. In *Build and deployment* choose **Deploy from a branch**.
-4. Pick the branch **`main`** and the folder **`/docs`** (or **`/ (root)`** if you
-   prefer to serve the site from the repository root), then press **Save**.
-5. Wait for the green check mark. The game is now live at:
-
-   ```
-   https://<your-user>.github.io/<your-repo>/
-   ```
-
-   For this repository that is **https://nihhiu.github.io/Dangandle/**
-
-> `docs/.nojekyll` is committed on purpose, so GitHub publishes the folder exactly
-> as it is on disk.
-
-### 2. Test it locally before publishing
-
-```bash
-python scripts/serve_web.py        # http://127.0.0.1:8765/
-```
-
 ### How the daily puzzle works
 
 * The date (`YYYY-MM-DD`) is hashed into a seed, so **everybody plays the same
